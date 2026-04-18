@@ -1,0 +1,8 @@
+# Agents
+.agents/
+.antigravity/
+
+# OS files
+.DS_Store
+Thumbs.db
+
