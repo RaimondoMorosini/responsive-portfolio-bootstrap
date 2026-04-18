@@ -1,0 +1,21 @@
+// --------------------------------------------------------------------------
+// Main content
+// --------------------------------------------------------------------------
+.l-main-content {
+  padding: 2rem;
+  
+  // Distanziamo ogni section in modo uniforme
+  & > section {
+    margin-bottom: 3rem;
+    
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 8rem;
+    }
+  }
+  
+}
+  
+
+
+
+

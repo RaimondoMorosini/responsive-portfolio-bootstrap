@@ -1,0 +1,116 @@
+// ==========================================================================
+// COMPONENT: Hero Section
+// ==========================================================================
+
+.c-hero {
+  // --- Token Locali ---
+  $hero-py:           clamp(4rem, 12vh, 8rem);
+  $hero-gap:          2.5rem;
+  $title-size:        clamp(2.4rem, 6vw, 4rem);
+  $text-muted:        var(--bs-secondary-color);
+  $accent:            $primary; // La tua variabile globale Bootstrap
+
+  padding: $hero-py 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $hero-gap;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__badge {
+    color: $accent;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.85rem;
+  }
+
+  &__title {
+    font-size: $title-size;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--bs-emphasis-color);
+    margin: 0;
+
+    &-divider {
+      color: rgba($accent, 0.3);
+      font-weight: 300;
+    }
+
+    &-focus {
+      @include media-breakpoint-up(lg) {
+        display: block; // Enfasi visiva: manda a capo la seconda parte su desktop
+      }
+    }
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: $text-muted;
+    max-width: 70ch;
+    margin: 0;
+
+    strong {
+      color: var(--bs-emphasis-color);
+      font-weight: 600;
+    }
+  }
+
+  
+  &__actions {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  // --- Personalizzazione Bottone Bootstrap ---
+  .c-btn-hero {
+    $hover-move: -4px;
+    
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    // Sfruttiamo le CSS Variables di Bootstrap per un Clean Code totale
+    --bs-btn-padding-y: 0.8rem;
+    --bs-btn-padding-x: 2.2rem;
+    --bs-btn-font-weight: 600;
+    --bs-btn-border-radius: 10px;
+
+    &:hover {
+      transform: translateY($hover-move);
+    }
+
+    // Variante Principale
+    &.btn-primary {
+      border: none;
+      &:hover {
+        box-shadow: 0 10px 25px rgba($primary, 0.25);
+        filter: brightness(1.1);
+      }
+    }
+
+    // Variante Outline (Secondaria)
+    &--secondary {
+      border-width: 2px;
+      color: var(--bs-body-color);
+      border-color: rgba($primary, 0.5);
+
+      &:hover {
+        background-color: $primary; 
+        border-color: $primary;
+        box-shadow: 0 8px 20px rgba($primary, 0.15);
+      }
+    }
+  }
+}

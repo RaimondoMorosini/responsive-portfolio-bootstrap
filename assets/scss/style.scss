@@ -1,0 +1,21 @@
+// 1. Funzioni (sempre prima)
+@import "../bootstrap-5.3.8/scss/functions";
+
+// 2. Variabili (qui puoi sovrascrivere)
+//$body-bg: #111318;
+//$body-color: #f8f9fa; // Testo chiaro di default per contrasto
+
+@import "../bootstrap-5.3.8/scss/variables";
+
+// 3. Mixins
+@import "../bootstrap-5.3.8/scss/mixins";
+
+// 4. Bootstrap completo
+@import "../bootstrap-5.3.8/scss/bootstrap";
+
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/main";
+
+@import "components/hero";
+@import "components/about";

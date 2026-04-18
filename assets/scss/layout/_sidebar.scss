@@ -1,0 +1,50 @@
+// ==========================================================================
+// LAYOUT — Sidebar 
+// ==========================================================================
+
+// Tokens locali (sovrascrivibili da fuori)
+$sidebar-width:       col(3) !default; // gestito da Bootstrap grid
+$sidebar-bg:          var(--bs-tertiary-bg) !default;
+$sidebar-border:      rgba(var(--bs-primary-rgb), 0.1) !default;
+$sidebar-top-offset:  80px !default;
+$main-bg:             var(--bs-body-bg) !default;
+
+// --------------------------------------------------------------------------
+// Aside
+// --------------------------------------------------------------------------
+.sidebar {
+  background-color: $sidebar-bg;
+
+  @include media-breakpoint-up(lg) {
+    border-right: 1px solid $sidebar-border;
+  }
+}
+
+.sidebar__inner {
+  position: sticky;
+  top: $sidebar-top-offset;
+  z-index: $zindex-sticky - 10;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+
+// --------------------------------------------------------------------------
+// Reading progress bar
+// --------------------------------------------------------------------------
+.reading-progress {
+  height: 8px;
+}

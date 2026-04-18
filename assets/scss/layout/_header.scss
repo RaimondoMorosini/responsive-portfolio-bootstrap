@@ -1,0 +1,47 @@
+// ==========================================================================
+// HEADER NAVBAR ($layout)
+// ==========================================================================
+
+//colori che voglio usare
+// #0D1117 nero sfondo nav bar sicuro 
+// [#00e475] verde sicuro uasato per iil name brand
+// #16161D grigio scuro per il testo 
+
+header.header-sito {
+  background-color: $body-bg;
+ // border-bottom: 1px solid rgba($primary, 0.1);
+    border-bottom: 1px solid var(--bs-border-color-translucent);
+
+  z-index: 1030;
+  .nav-link {
+    position: relative;
+    color: rgba($body-color, 0.6);
+    padding: 0.5rem 0;
+    transition: 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: $body-color;
+    }
+    &.active{
+      color: $primary;
+    }
+
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+  }
+}
+
