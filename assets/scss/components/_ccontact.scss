@@ -35,12 +35,17 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 1rem;
     background: rgba(var(--bs-primary-rgb), 0.03);
     border-radius: 12px;
     border: 1px solid transparent;
     transition: all 0.3s ease;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &:hover {
       background: rgba(var(--bs-primary-rgb), 0.05);
@@ -49,6 +54,7 @@
     }
 
     &-icon {
+      flex-shrink: 0;
       width: 44px;
       height: 44px;
       display: grid;
@@ -58,6 +64,11 @@
       border-radius: 10px;
       font-size: 1.25rem;
       box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.2);
+    }
+
+    &-body {
+      min-width: 0;
+      flex: 1;
     }
 
     &-label {
@@ -74,6 +85,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: color 0.2s ease;
+      display: block;
+      word-break: break-word;
       
       &:hover { 
         color: var(--bs-primary); 
