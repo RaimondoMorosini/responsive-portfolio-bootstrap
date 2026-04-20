@@ -11903,23 +11903,10 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   position: sticky;
   top: 80px;
   z-index: 1010;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-}
-@media (min-width: 768px) {
-  .sidebar__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 992px) {
-  .sidebar__inner {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+  gap: 1.5rem;
 }
 
 .reading-progress {

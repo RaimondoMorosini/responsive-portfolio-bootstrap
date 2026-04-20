@@ -127,7 +127,7 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/tutti-i-progetti/">Progetti</a>
+                <a class="nav-link" href="/progetti/">Progetti</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/#contact">Contattami</a>
@@ -146,22 +146,30 @@
           <div class="sidebar__inner">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb m-0 small">
-                <li class="breadcrumb-item">
-                  <a href="#" class="text-decoration-none text-muted">Blog</a>
-                </li>
                 <li
                   class="breadcrumb-item active text-truncate"
                   aria-current="page"
-                ></li>
+                >Home</li>
               </ol>
             </nav>
 
-            <nav id="sectionNav" class="nav nav-pills small gap-2 py-2">
-              <a class="nav-link" href="#hero">Home</a>
-              <a class="nav-link" href="#about">About</a>
-              <a class="nav-link" href="#projects">Progetti</a>
-              <a class="nav-link" href="#contact">Contatti</a>
-            </nav>
+            <div class="sidebar__section mt-4">
+              <h3 class="small text-uppercase fw-bold text-muted mb-3" style="letter-spacing: 1px;">Indice Pagina</h3>
+              <nav id="sectionNav" class="nav flex-column nav-pills small gap-1">
+                <a class="nav-link d-flex align-items-center px-3" href="#hero">
+                  <i class="bi bi-house-door me-2"></i> Benvenuto
+                </a>
+                <a class="nav-link d-flex align-items-center px-3" href="#chi-sono">
+                  <i class="bi bi-person-badge me-2"></i> Profilo & Visione
+                </a>
+                <a class="nav-link d-flex align-items-center px-3" href="#projects">
+                  <i class="bi bi-terminal me-2"></i> Portfolio Progetti
+                </a>
+                <a class="nav-link d-flex align-items-center px-3" href="#contact">
+                  <i class="bi bi-envelope me-2"></i> Contatti
+                </a>
+              </nav>
+            </div>
 
             <div class="d-none align-items-center gap-2">
               <span class="small text-muted text-nowrap"
@@ -375,7 +383,7 @@
                     metodo e curiosità.
                   </p>
                 </div>
-                <a href="/projects" class="c-projects__cta-top"
+                <a href="/progetti/" class="c-projects__cta-top"
                   >Tutti i progetti →</a
                 >
               </div>
@@ -407,7 +415,7 @@
                         del software "sotto il cofano".
                       </p>
                       <a
-                        href="/projects/c-library"
+                        href="/progetti/c-library/"
                         class="c-project-card__link"
                       >
                         Vedi progetto
@@ -446,7 +454,7 @@
                         responsabilità (Separation of Concerns).
                       </p>
                       <a
-                        href="/projects/spring-api"
+                        href="/progetti/spring-api/"
                         class="c-project-card__link"
                       >
                         Vedi progetto
@@ -485,7 +493,7 @@
                         sia all'altezza della logica sottostante.
                       </p>
                       <a
-                        href="/projects/vue-frontend"
+                        href="/progetti/vue-frontend/"
                         class="c-project-card__link"
                       >
                         Vedi progetto
@@ -498,7 +506,7 @@
 
               <div class="c-projects__footer text-center mt-5">
                 <a
-                  href="/projects"
+                  href="/progetti/"
                   class="btn btn-primary c-projects__cta-main"
                 >
                   Tutti i progetti

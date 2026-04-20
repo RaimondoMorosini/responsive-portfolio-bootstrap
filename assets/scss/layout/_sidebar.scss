@@ -24,20 +24,10 @@ $main-bg:             var(--bs-body-bg) !default;
   position: sticky;
   top: $sidebar-top-offset;
   z-index: $zindex-sticky - 10;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
-  @include media-breakpoint-up(md) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @include media-breakpoint-up(lg) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+  gap: 1.5rem;
 }
 
 

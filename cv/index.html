@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curriculum - Raimondo Morosini</title>
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Meta Theme Color -->
+    <meta name="theme-color" content="#111318" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Android/Chrome Manifest -->
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+
+    <header class="sticky-top header-sito">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <span>_RM</span>
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/progetti/">Progetti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#contact">Contattami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/cv/">CV</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="row align-items-stretch">
+        <aside class="sidebar col-12 col-lg-3">
+          <div class="sidebar__inner">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 small">
+                <li class="breadcrumb-item">
+                  <a href="/" class="text-decoration-none text-muted">Home</a>
+                </li>
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >Curriculum</li>
+              </ol>
+            </nav>
+
+            <div class="sidebar__section mt-4">
+              <h3 class="small text-uppercase fw-bold text-muted mb-3" style="letter-spacing: 1px;">Navigazione</h3>
+              <nav id="sectionNav" class="nav flex-column nav-pills small gap-1">
+                <a class="nav-link d-flex align-items-center px-3" href="/">
+                  <i class="bi bi-house-door me-2"></i> Torna alla Home
+                </a>
+                <a class="nav-link d-flex align-items-center px-3" href="/progetti/">
+                  <i class="bi bi-terminal me-2"></i> Vedi Progetti
+                </a>
+                <a class="nav-link d-flex align-items-center px-3 active" href="/cv/">
+                  <i class="bi bi-file-earmark-person me-2"></i> Curriculum Vitae
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <main class="l-main-content col-12 col-lg-9">
+          <section id="cv" class="c-projects pb-5 pt-4">
+            <div class="container">
+              <div class="c-projects__header mb-5">
+                <div class="c-projects__header-text text-center mx-auto">
+                  <span class="c-projects__badge bg-warning text-dark">Work In Progress</span>
+                  <h2 class="c-projects__title mt-3">Curriculum Vitae</h2>
+                  <p class="c-projects__subtitle">
+                    Questa sezione è in fase di ultimazione. Presto inserirò i dettagli in modo interattivo.
+                  </p>
+                  <p class="c-projects__subtitle mx-auto" style="max-width: 600px;">
+                    Nel frattempo puoi scaricare il formato cartaceo premendo il pulsante qui sotto.
+                  </p>
+                </div>
+              </div>
+
+              <div class="text-center mt-5 mb-5 pb-5">
+                <a href="../assets/pdf/cv.pdf" class="btn btn-primary c-btn-hero" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-file-earmark-pdf-fill me-2"></i> Scarica il PDF del CV
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

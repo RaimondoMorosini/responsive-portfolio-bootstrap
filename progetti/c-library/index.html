@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sviluppo Low-Level - Raimondo Morosini</title>
+
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Meta Theme Color -->
+    <meta name="theme-color" content="#111318" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+  </head>
+  <body>
+    <header class="sticky-top header-sito">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <span>_RM</span>
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/progetti/">Progetti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#contact">Contattami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cv/">CV</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="row align-items-stretch">
+        <aside class="sidebar col-12 col-lg-3">
+          <div class="sidebar__inner">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 small">
+                <li class="breadcrumb-item">
+                  <a href="/" class="text-decoration-none text-muted">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="/progetti/" class="text-decoration-none text-muted">Progetti</a>
+                </li>
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >Libreria C</li>
+              </ol>
+            </nav>
+
+            <div class="sidebar__section mt-4">
+              <h3 class="small text-uppercase fw-bold text-muted mb-3" style="letter-spacing: 1px;">Navigazione</h3>
+              <nav id="sectionNav" class="nav flex-column nav-pills small gap-1">
+                <a class="nav-link d-flex align-items-center px-3" href="/">
+                  <i class="bi bi-house-door me-2"></i> Torna alla Home
+                </a>
+                <a class="nav-link d-flex align-items-center px-3" href="/progetti/">
+                  <i class="bi bi-terminal me-2"></i> Lista Progetti
+                </a>
+                <a class="nav-link d-flex align-items-center px-3 active" href="#">
+                  <i class="bi bi-code-square me-2"></i> Dettaglio Progetto
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <main class="l-main-content col-12 col-lg-9">
+          <section id="project-detail" class="c-projects pb-5 pt-4">
+            <div class="container">
+              <div class="c-projects__header mb-5">
+                <div class="c-projects__header-text text-center mx-auto">
+                  <span class="c-projects__badge bg-warning text-dark">Work In Progress</span>
+                  <h2 class="c-projects__title mt-3">Sviluppo Low-Level & Strutture Dati</h2>
+                  <p class="c-projects__subtitle">
+                    Documentazione in via di completamento.
+                  </p>
+                  <p class="c-projects__subtitle mx-auto mt-4" style="max-width: 600px;">
+                    In questa pagina descriverò le scelte architetturali, la gestione manuale della memoria e gli algoritmi implementati. 
+                    Sto organizzando il codice in modo che sia facilmente consultabile per mostrare l'applicazione concreta dei pattern in C.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
