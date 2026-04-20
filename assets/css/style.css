@@ -11938,6 +11938,28 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   }
 }
 
+.c-contact__badge, .c-projects__badge, .c-about__badge, .c-hero__badge {
+  color: var(--bs-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.c-contact__title, .c-projects__title, .c-about__title, .c-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--bs-emphasis-color);
+}
+
+.c-contact__description, .c-projects__subtitle, .c-about__description, .c-hero__description {
+  color: var(--bs-secondary-color);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 70ch;
+}
+
 .c-hero {
   padding: clamp(4rem, 12vh, 8rem) 0;
   min-height: 70vh;
@@ -11956,16 +11978,9 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
 }
 .c-hero__badge {
   color: #0d6efd;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 0.85rem;
 }
 .c-hero__title {
   font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--bs-emphasis-color);
   margin: 0;
 }
 .c-hero__title-divider {
@@ -11978,10 +11993,6 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   }
 }
 .c-hero__description {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: var(--bs-secondary-color);
-  max-width: 70ch;
   margin: 0;
 }
 .c-hero__description strong {
@@ -12022,50 +12033,35 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
 }
 
-.profile-section {
+.c-about {
   padding: 4rem 0;
   background-color: var(--bs-body-tertiary);
   border-radius: 1.5rem;
   box-shadow: var(--bs-box-shadow);
 }
-.profile-header {
+.c-about__header {
   text-align: center;
   margin-bottom: 3rem;
 }
-.profile-header__badge-wrapper {
-  margin-bottom: 1rem;
-}
-.profile-header__badge {
+.c-about__badge {
   display: inline-block;
   color: var(--bs-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
-.profile-header__title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--bs-emphasis-color);
+.c-about__title {
   margin-bottom: 0.5rem;
 }
-.profile-header__lead {
+.c-about__lead {
   font-size: 1.25rem;
   color: var(--bs-emphasis-color);
   margin-bottom: 1.5rem;
 }
-.profile-header__description {
+.c-about__description {
   text-align: left;
-  color: var(--bs-secondary-color);
-  font-size: 1.25rem;
-  line-height: 1.8;
-  max-width: 70ch;
   margin: 0 auto;
 }
 
-.feature-card {
+.c-feature-card {
   height: 100%;
   background-color: var(--bs-body);
   border: 1px solid rgba(var(--bs-primary), 0.15);
@@ -12075,14 +12071,14 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   display: flex;
   flex-direction: column;
 }
-.feature-card__header {
+.c-feature-card__header {
   padding: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.feature-card__icon-box {
+.c-feature-card__icon-box {
   width: 48px;
   height: 48px;
   background-color: var(--bs-primary);
@@ -12093,19 +12089,19 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   border-radius: 0.75rem;
   font-size: 1.5rem;
 }
-.feature-card__title {
+.c-feature-card__title {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0;
 }
-.feature-card__body {
+.c-feature-card__body {
   padding: 1.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.feature-card__list {
+.c-feature-card__list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -12113,31 +12109,31 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   flex-direction: column;
   gap: 1rem;
 }
-.feature-card__item {
+.c-feature-card__item {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
 }
-.feature-card__item i {
+.c-feature-card__item i {
   color: var(--bs-primary);
   font-size: 1.2rem;
   flex-shrink: 0;
 }
-.feature-card__item--muted {
+.c-feature-card__item--muted {
   font-style: italic;
   color: var(--bs-secondary-color);
 }
-.feature-card__item--muted i {
+.c-feature-card__item--muted i {
   color: var(--bs-secondary-color);
 }
-.feature-card__highlight {
+.c-feature-card__highlight {
   padding: 1.5rem;
   background-color: rgba(var(--bs-primary), 0.08);
   border: 1px solid rgba(var(--bs-primary), 0.2);
   border-radius: 0.75rem;
 }
-.feature-card__sub-title {
+.c-feature-card__sub-title {
   color: var(--bs-primary);
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -12147,18 +12143,18 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   align-items: center;
   gap: 0.5rem;
 }
-.feature-card__text--small {
+.c-feature-card__text--small {
   font-size: 0.875rem;
   margin-bottom: 0;
 }
-.feature-card__extra-title {
+.c-feature-card__extra-title {
   font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--bs-secondary-color);
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.feature-card__icon--secondary {
+.c-feature-card__icon--secondary {
   color: var(--bs-secondary-color) !important;
 }
 
@@ -12179,25 +12175,13 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
 }
 .c-projects__badge {
   color: #0d6efd;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 0.85rem;
   display: block;
 }
 .c-projects__title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  color: var(--bs-emphasis-color);
   margin: 0;
-  line-height: 1.1;
 }
 .c-projects__subtitle {
-  font-size: 1.25rem;
-  color: var(--bs-secondary-color);
   margin: 0;
-  max-width: 70ch;
-  line-height: 1.8;
 }
 .c-projects__cta-top {
   font-size: 0.88rem;
@@ -12345,25 +12329,13 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
 .c-contact__badge {
   display: inline-block;
   color: var(--bs-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 0.85rem;
   margin-bottom: 0.5rem;
 }
 .c-contact__title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.1;
   margin-bottom: 1rem;
-  color: var(--bs-emphasis-color);
 }
 .c-contact__description {
-  color: var(--bs-secondary-color);
-  font-size: 1.25rem;
-  max-width: 70ch;
   margin-bottom: 3rem;
-  line-height: 1.8;
 }
 .c-contact__node {
   display: flex;
