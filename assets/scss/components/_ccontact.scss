@@ -1,0 +1,146 @@
+// ==========================================================================
+// COMPONENT: Contact Section (Variant A: Technical Clean)
+// ==========================================================================
+
+.c-contact {
+  // --- Token Locali ---
+  $contact-py:      clamp(4rem, 12vh, 8rem);
+  $accent:          var(--bs-primary);
+  $border-color:    rgba(var(--bs-primary-rgb), 0.15);
+  $label-color:     var(--bs-secondary-color);
+  $input-bg:        rgba(var(--bs-primary-rgb), 0.02);
+  
+  padding: $contact-py 0;
+  background-color: var(--bs-body-bg);
+
+  &__badge {
+    @extend %section-badge;
+    display: inline-block;
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    @extend %section-title;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @extend %section-text;
+    margin-bottom: 3rem;
+  }
+
+  // --- Nodi Informativi ---
+  &__node {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(var(--bs-primary-rgb), 0.03);
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(var(--bs-primary-rgb), 0.05);
+      border-color: rgba(var(--bs-primary-rgb), 0.1);
+      transform: translateX(5px);
+    }
+
+    &-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--bs-primary);
+      color: #fff;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.2);
+    }
+
+    &-label {
+      display: block;
+      font-family: var(--bs-font-monospace);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--bs-secondary-color);
+      margin-bottom: 0.2rem;
+    }
+
+    &-link {
+      color: var(--bs-emphasis-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      
+      &:hover { 
+        color: var(--bs-primary); 
+      }
+    }
+  }
+
+  // --- Form Card ---
+  &__card {
+    background: var(--bs-body-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+    box-shadow: var(--bs-box-shadow-lg);
+  }
+
+  &__group {
+    position: relative;
+  }
+
+  &__label {
+    display: block;
+    font-family: var(--bs-font-monospace);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--bs-primary);
+    margin-bottom: 0.6rem;
+    opacity: 0.8;
+  }
+
+  &__input {
+    background-color: var(--bs-tertiary-bg);
+    border: 1.5px solid var(--bs-border-color);
+    color: var(--bs-emphasis-color);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    
+    &::placeholder { 
+      color: var(--bs-secondary-color);
+      opacity: 0.4;
+    }
+
+    &:focus {
+      background-color: var(--bs-body-bg);
+      border-color: var(--bs-primary);
+      box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.1);
+      outline: none;
+    }
+  }
+
+  // --- Bottone ---
+  &__btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

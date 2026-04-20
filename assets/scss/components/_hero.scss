@@ -28,18 +28,13 @@
   }
 
   &__badge {
-    color: $accent;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 0.85rem;
+    @extend %section-badge;
+    color: $accent; // Override shared color with specific hero variable if needed, or keep it to default
   }
 
   &__title {
-    font-size: $title-size;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--bs-emphasis-color);
+    @extend %section-title;
+    font-size: $title-size; // Hero has larger title
     margin: 0;
 
     &-divider {
@@ -55,10 +50,7 @@
   }
 
   &__description {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: $text-muted;
-    max-width: 70ch;
+    @extend %section-text;
     margin: 0;
 
     strong {

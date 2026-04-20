@@ -511,122 +511,91 @@
             </div>
           </section>
 
-          <section id="contact" class="c-contact-2">
+          <section id="contact" class="c-contact">
             <div class="container">
-              <div class="text-center mb-5">
-                <span class="c-contact-2__badge">Contatti</span>
-                <h2 class="c-contact-2__title">Scrivimi</h2>
-                <p class="c-contact-2__desc">
-                  Hai un'idea, una proposta o vuoi semplicemente salutare?
-                  Compila il form e ti rispondo entro 24 ore.
-                </p>
-              </div>
+              <div class="row g-5 align-items-start">
+                <div class="col-12 col-md-5 col-lg-6">
+                  <div class="c-contact__info">
+                    <header class="c-contact__header">
+                      <span class="c-contact__badge">Disponibilità</span>
+                      <h2 class="c-contact__title">Parliamo del tuo progetto</h2>
+                      <p class="c-contact__description">
+                        Sono aperto a nuove collaborazioni focalizzate su 
+                        <strong>Clean Code</strong>, <strong>Architettura Software</strong> e 
+                        <strong>Sviluppo Backend/Systems</strong>.
+                      </p>
+                    </header>
 
-              <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-8">
-                  <div class="c-contact-2__card">
-                    <form id="contactForm2" novalidate>
-                      <div class="row g-3">
-                        <div class="col-12 col-sm-6">
-                          <label for="c2-name" class="c-contact-2__label"
-                            >Nome</label
-                          >
-                          <input
-                            type="text"
-                            id="c2-name"
-                            name="name"
-                            class="form-control c-contact-2__input"
-                            placeholder="Mario Rossi"
-                            required
-                          />
+                    <div class="c-contact__channels">
+                      <div class="c-contact__node">
+                        <div class="c-contact__node-icon">
+                          <i class="bi bi-envelope-at"></i>
                         </div>
-
-                        <div class="col-12 col-sm-6">
-                          <label for="c2-email" class="c-contact-2__label"
-                            >Email</label
+                        <div class="c-contact__node-body">
+                          <span class="c-contact__node-label">[ email ]</span>
+                          <a
+                            href="mailto:raimondo.morosini@example.com"
+                            class="c-contact__node-link"
                           >
-                          <input
-                            type="email"
-                            id="c2-email"
-                            name="email"
-                            class="form-control c-contact-2__input"
-                            placeholder="mario@esempio.it"
-                            required
-                          />
-                        </div>
-
-                        <div class="col-12">
-                          <label for="c2-subject" class="c-contact-2__label"
-                            >Oggetto</label
-                          >
-                          <select
-                            id="c2-subject"
-                            name="subject"
-                            class="form-select c-contact-2__input"
-                            required
-                          >
-                            <option value="" disabled selected>
-                              Seleziona un argomento…
-                            </option>
-                            <option value="opportunita">
-                              Opportunità lavorativa
-                            </option>
-                            <option value="collaborazione">
-                              Collaborazione
-                            </option>
-                            <option value="consulenza">
-                              Consulenza tecnica
-                            </option>
-                            <option value="altro">Altro</option>
-                          </select>
-                        </div>
-
-                        <div class="col-12">
-                          <label for="c2-message" class="c-contact-2__label"
-                            >Messaggio</label
-                          >
-                          <textarea
-                            id="c2-message"
-                            name="message"
-                            class="form-control c-contact-2__input c-contact-2__textarea"
-                            placeholder="Ciao Raimondo, volevo chiederti…"
-                            rows="5"
-                            required
-                          ></textarea>
-                        </div>
-
-                        <div class="col-12 d-flex justify-content-end">
-                          <button
-                            type="submit"
-                            class="btn btn-primary c-contact-2__submit"
-                          >
-                            Invia messaggio
-                          </button>
+                            raimondo.morosini@example.com
+                          </a>
                         </div>
                       </div>
-                    </form>
-                  </div>
 
-                  <div class="c-contact-2__social-row">
-                    <a
-                      href="https://github.com/tuousername"
-                      target="_blank"
-                      rel="noopener"
-                      class="c-contact-2__social"
-                    >
-                      GitHub
-                    </a>
-                    <span class="c-contact-2__social-sep" aria-hidden="true"
-                      >·</span
-                    >
-                    <a
-                      href="https://linkedin.com/in/tuousername"
-                      target="_blank"
-                      rel="noopener"
-                      class="c-contact-2__social"
-                    >
-                      LinkedIn
-                    </a>
+                      <div class="c-contact__node">
+                        <div class="c-contact__node-icon">
+                          <i class="bi bi-terminal"></i>
+                        </div>
+                        <div class="c-contact__node-body">
+                          <span class="c-contact__node-label">[ github ]</span>
+                          <a href="https://github.com/RaimondoMorosini" class="c-contact__node-link"
+                            >RaimondoMorosini</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-7 col-lg-6">
+                  <div class="c-contact__card">
+                    <form class="c-contact__form">
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label">[ identità ]</label>
+                        <input
+                          type="text"
+                          class="form-control c-contact__input"
+                          placeholder="Il tuo nome o azienda"
+                        />
+                      </div>
+
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label"
+                          >[ contatto ]</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control c-contact__input"
+                          placeholder="tua.email@esempio.it"
+                        />
+                      </div>
+
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label">[ messaggio ]</label>
+                        <textarea
+                          class="form-control c-contact__input"
+                          rows="4"
+                          placeholder="Descrivi brevemente la tua idea o necessità tecnica..."
+                        ></textarea>
+                      </div>
+
+                      <button
+                        type="submit"
+                        class="btn btn-primary c-contact__btn-submit"
+                      >
+                        Invia Messaggio
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,28 @@
+// ==========================================================================
+// SHARED STYLES (MIXINS & PLACEHOLDERS)
+// ==========================================================================
+
+// Usiamo placeholders (extend) per un CSS più leggero e pulito.
+// Si possono utilizzare anche mixins se in futuro avremo bisogno di passare parametri.
+
+%section-badge {
+  color: var(--bs-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.85rem;
+}
+
+%section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--bs-emphasis-color);
+}
+
+%section-text {
+  color: var(--bs-secondary-color);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  max-width: 70ch;
+}

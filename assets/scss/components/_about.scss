@@ -26,18 +26,14 @@ $radius-md: 0.75rem;
     }
 
     &__badge {
+        @extend %section-badge;
         display: inline-block;
-        padding: 0.5rem 1rem;
-        background-color: $primary-color;
-        color: #fff;
-        border-radius: 50rem;
-        font-size: 0.875rem;
-        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
     }
 
     &__title {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 800;
+        @extend %section-title;
         margin-bottom: 0.5rem;
     }
 
@@ -48,10 +44,8 @@ $radius-md: 0.75rem;
     }
 
     &__description {
+        @extend %section-text;
         text-align: left;
-        color: $text-muted;
-        line-height: 1.8;
-        max-width: 900px;
         margin: 0 auto;
     }
 }

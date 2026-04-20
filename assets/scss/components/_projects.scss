@@ -26,27 +26,19 @@
   }
 
   &__badge {
+    @extend %section-badge;
     color: $primary;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    font-size: 0.82rem;
     display: block;
   }
 
   &__title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    color: var(--bs-emphasis-color);
+    @extend %section-title;
     margin: 0;
-    line-height: 1.1;
   }
 
   &__subtitle {
-    font-size: 1rem;
-    color: var(--bs-secondary-color);
+    @extend %section-text;
     margin: 0;
-    max-width: 52ch;
   }
 
   // CTA testuale nell'header (desktop)
