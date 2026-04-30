@@ -1,10 +1,11 @@
-// 1. Funzioni (sempre prima)
+// 1. Funzioni Bootstrap (sempre prima — servono per tint-color, shade-color, ecc.)
 @import "../bootstrap-5.3.8/scss/functions";
 
-// 2. Variabili (qui puoi sovrascrivere)
-//$body-bg: #111318;
-//$body-color: #f8f9fa; // Testo chiaro di default per contrasto
+// 2. Variabili custom (sovrascrivono i !default di Bootstrap)
+//    DEVE stare dopo functions e PRIMA di variables
+@import "custom-variables";
 
+// 3. Variabili Bootstrap (usa i nostri valori grazie ai !default)
 @import "../bootstrap-5.3.8/scss/variables";
 
 // 3. Mixins

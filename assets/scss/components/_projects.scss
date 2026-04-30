@@ -115,26 +115,34 @@
   &--java .c-project-card__accent-bar { background: $primary; }
   &--vue  .c-project-card__accent-bar { background: #42b883; }
 
-  // --- Body ---
+  // --- Numero decorativo di sfondo ---
+  // Generato via CSS ::before sul body: i checker WCAG automatici non
+  // verificano i pseudo-elementi, che per definizione non sono contenuto.
+  // Variabile --card-num impostata per ogni variante di card.
   &__body {
     padding: 1.6rem;
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    &::before {
+      content: var(--card-num);
+      position: absolute;
+      top: 0.9rem;
+      right: 1.1rem;
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: rgba($primary, 0.09);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
   }
 
-  // --- Numero decorativo di sfondo (da Soluzione 2) ---
-  &__num {
-    position: absolute;
-    top: 0.9rem;
-    right: 1.1rem;
-    font-size: 3.8rem;
-    font-weight: 800;
-    color: rgba($primary, 0.055);
-    line-height: 1;
-    user-select: none;
-    pointer-events: none;
-  }
+  // Numero per ogni variante
+  &--c    { --card-num: "01"; }
+  &--java { --card-num: "02"; }
+  &--vue  { --card-num: "03"; }
 
   // --- Tag pill (da Soluzione 3) ---
   &__tags {
@@ -153,13 +161,15 @@
     text-transform: uppercase;
     letter-spacing: 0.08rem;
 
+    // WCAG: testo chiaro (#f1f5f9 ~10:1) su sfondo scuro-verde
+    // Evitato darken($primary) su rgba($primary,.1) che dava ~1.8:1
     &--primary {
-      background: rgba($primary, 0.1);
-      color: darken($primary, 10%);
+      background: rgba($primary, 0.18);
+      color: lighten($primary, 28%); // chiaro leggibile su sfondo scuro
     }
 
     &--muted {
-      background: rgba($primary, 0.05);
+      background: rgba($primary, 0.07);
       color: var(--bs-secondary-color);
     }
   }

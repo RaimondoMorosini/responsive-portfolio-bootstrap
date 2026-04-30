@@ -61,7 +61,8 @@ $radius-md: 0.75rem;
         display: flex;
         align-items: center;
         gap: 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        // Bordo visibile su sfondo scuro (rgba(0,0,0,0.05) era invisibile)
+        border-bottom: 1px solid var(--bs-border-color);
     }
 
     &__icon-box {

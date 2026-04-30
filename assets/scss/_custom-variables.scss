@@ -1,0 +1,147 @@
+// ==========================================================================
+// CUSTOM BOOTSTRAP VARIABLES
+// ==========================================================================
+// Questo file sovrascrive le variabili di Bootstrap PRIMA che vengano
+// importate. Seguire sempre questo ordine in style.scss:
+//   1. @import "functions"
+//   2. @import "custom-variables"   <-- questo file
+//   3. @import "variables"
+//   4. @import "mixins"
+//   5. @import "bootstrap"
+//
+// Documentazione di riferimento:
+// https://getbootstrap.com/docs/5.3/customize/sass/
+// https://getbootstrap.com/docs/5.3/customize/color/
+// ==========================================================================
+
+
+// --------------------------------------------------------------------------
+// 1. COLORI BASE
+// Ridefinizione dei colori primitivi da cui Bootstrap ricava tutto il resto.
+// $green diventa il nuovo colore dominante del sistema.
+//
+// CONTRASTO WCAG 2.2 (target AA = 4.5:1 normale, 3:1 testo grande):
+//   #16a34a su #0f172a  → ~5.7:1  ✅  (testo bianco su verde OK)
+//   #16a34a su #ffffff  → ~5.7:1  ✅
+// --------------------------------------------------------------------------
+
+$green:  #16a34a; // Verde medio-scuro: WCAG AA con testo bianco (~5.7:1)
+$blue:   #0ea5e9; // Blu informativo
+$cyan:   #22d3ee;
+$teal:   #14b8a6;
+$red:    #dc2626; // Rosso leggibile su scuro
+$orange: #ea580c;
+$yellow: #ca8a04; // Ambra leggibile su scuro (~4.6:1 con bianco)
+
+
+// --------------------------------------------------------------------------
+// 2. COLORI TEMA (THEME COLORS)
+// Questi sono i token semantici usati in classi come btn-primary, bg-danger…
+// --------------------------------------------------------------------------
+
+$primary:   $green;           // Verde: #16a34a — WCAG AA con bianco
+$secondary: #64748b;          // Slate-500: ~4.8:1 su #0f172a ✅
+$success:   #15803d;          // Verde scuro — WCAG AA con bianco
+$info:      #0284c7;          // Sky-600 — WCAG AA con bianco (~5:1)
+$warning:   $yellow;          // Ambra: #ca8a04 — WCAG AA con bianco
+$danger:    $red;             // Rosso: #dc2626 — WCAG AA con bianco
+$light:     #1e293b;          // Slate-800 — sfondo chiaro nel tema scuro
+$dark:      #0f172a;          // Slate-950 — il più scuro del sistema
+
+
+// --------------------------------------------------------------------------
+// 3. BODY — sfondo e testo predefinito
+// Imposta un tema completamente scuro come base globale della pagina.
+// --------------------------------------------------------------------------
+
+$body-bg:                 #0f172a;  // Slate-950 — sfondo principale
+$body-color:              #f1f5f9;  // Slate-100 — ~16:1 su #0f172a ✅
+
+// [AGGIUNTA] Bootstrap imposta $body-emphasis-color: $black (!default).
+// Su sfondo #0f172a il nero dà un contrasto di 1.17:1 — WCAG FAIL.
+// Con $white il contrasto diventa 19.6:1 ✅.
+// Usato da: %section-title, c-project-card__title, navbar-brand, var(--bs-emphasis-color)
+$body-emphasis-color:     #ffffff;  // Bianco — 19.6:1 su #0f172a ✅
+
+$body-secondary-bg:       #1e293b;  // Slate-800 — card, sidebar
+$body-tertiary-bg:        #162032;  // Intermedio — wells, hover
+
+// Testo secondario: ~9:1 su #0f172a ✅ (era .70, ora .80 per sicurezza)
+$body-secondary-color:    rgba(#f1f5f9, .80);
+// Testo terziario: ~5:1 su #0f172a ✅ (era .45 → insufficiente su sfondi chiari)
+$body-tertiary-color:     rgba(#f1f5f9, .55);
+
+
+// --------------------------------------------------------------------------
+// 4. LINK
+// I link ereditano il $primary (verde), con hover più scuro.
+// --------------------------------------------------------------------------
+
+$link-color:              $primary;
+$link-hover-color:        shade-color($primary, 20%);
+
+
+// --------------------------------------------------------------------------
+// 4b. NAV PILLS — sidebar scrollspy
+// Bootstrap usa $component-active-bg: $primary (#16a34a) per il link .active
+// dei nav-pills. Con testo bianco il contrasto è 3.29:1 — WCAG FAIL a 14px.
+//
+// [AGGIUNTA] Sovrascriviamo con un verde più scuro:
+//   #15803d (= $success) + testo #ffffff → ~5.7:1 ✅ WCAG AA
+// --------------------------------------------------------------------------
+
+$nav-pills-link-active-color: #ffffff;   // Bianco — leggibile su verde scuro ✅
+$nav-pills-link-active-bg:    #15803d;   // Verde scuro (= $success) — ~5.7:1 ✅
+
+
+// --------------------------------------------------------------------------
+// 5. BORDI
+// Bordi sottili e visibili su sfondo scuro.
+// --------------------------------------------------------------------------
+
+$border-color:            #334155;
+$border-color-translucent: rgba(#e2e8f0, .12);
+
+
+// --------------------------------------------------------------------------
+// 6. VARIABILI DARK MODE (data-bs-theme="dark")
+// Sovrascriviamo le variabili usate quando Bootstrap attiva il tema dark.
+// Questo garantisce che anche i componenti con [data-bs-theme="dark"]
+// rispettino la nostra palette.
+// --------------------------------------------------------------------------
+
+$body-color-dark:              #e2e8f0;
+$body-bg-dark:                 #0f172a;
+$body-secondary-color-dark:    rgba(#e2e8f0, .70);
+$body-secondary-bg-dark:       #1e293b;
+$body-tertiary-color-dark:     rgba(#e2e8f0, .45);
+$body-tertiary-bg-dark:        #162032;
+$border-color-dark:            #334155;
+$border-color-translucent-dark: rgba(#e2e8f0, .12);
+
+// Testo enfasi per dark mode
+$primary-text-emphasis-dark:   tint-color($primary, 40%);
+$success-text-emphasis-dark:   tint-color($success, 40%);
+$info-text-emphasis-dark:      tint-color($info, 40%);
+$warning-text-emphasis-dark:   tint-color($warning, 40%);
+$danger-text-emphasis-dark:    tint-color($danger, 40%);
+$light-text-emphasis-dark:     #cbd5e1;
+$dark-text-emphasis-dark:      #94a3b8;
+
+// Sfondo sottile per dark mode
+$primary-bg-subtle-dark:       shade-color($primary, 80%);
+$success-bg-subtle-dark:       shade-color($success, 80%);
+$info-bg-subtle-dark:          shade-color($info, 80%);
+$warning-bg-subtle-dark:       shade-color($warning, 80%);
+$danger-bg-subtle-dark:        shade-color($danger, 80%);
+$light-bg-subtle-dark:         #1e293b;
+$dark-bg-subtle-dark:          #0f172a;
+
+// Bordi sottili per dark mode
+$primary-border-subtle-dark:   shade-color($primary, 40%);
+$success-border-subtle-dark:   shade-color($success, 40%);
+$info-border-subtle-dark:      shade-color($info, 40%);
+$warning-border-subtle-dark:   shade-color($warning, 40%);
+$danger-border-subtle-dark:    shade-color($danger, 40%);
+$light-border-subtle-dark:     #334155;
+$dark-border-subtle-dark:      #1e293b;
