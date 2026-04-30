@@ -16,6 +16,17 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 
+    <!-- Carica la libreria EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("TUA_PUBLIC_KEY");
+      })();
+    </script>
+
     <style>
       .devTest {
         position: fixed;
@@ -124,7 +135,9 @@
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto gap-lg-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./">Home</a>
+                <a class="nav-link active" aria-current="page" href="./"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="progetti/">Progetti</a>
@@ -211,7 +224,9 @@
                 <span class="c-hero__badge">Ciao, sono Raimondo</span>
                 <h1 class="c-hero__title">
                   Junior Software Developer
-                  <span class="c-hero__title-divider" aria-hidden="true">|</span>
+                  <span class="c-hero__title-divider" aria-hidden="true"
+                    >|</span
+                  >
                   <span class="c-hero__title-focus"
                     >Appassionato di Clean Code & Design Patterns</span
                   >
@@ -598,31 +613,40 @@
                   <div
                     class="c-contact__card h-100 d-flex flex-column justify-content-center"
                   >
-                    <form class="c-contact__form">
+                    <form
+                      class="c-contact__form"
+                      onsubmit="sendEmail(event, this)"
+                    >
                       <div class="c-contact__group mb-4">
                         <label class="c-contact__label">[ identità ]</label>
                         <input
+                          name="from_name"
                           type="text"
                           class="form-control c-contact__input"
                           placeholder="Il tuo nome o azienda"
+                          required
                         />
                       </div>
 
                       <div class="c-contact__group mb-4">
                         <label class="c-contact__label">[ contatto ]</label>
                         <input
+                          name="email"
                           type="email"
                           class="form-control c-contact__input"
                           placeholder="tua.email@esempio.it"
+                          required
                         />
                       </div>
 
                       <div class="c-contact__group mb-4">
                         <label class="c-contact__label">[ messaggio ]</label>
                         <textarea
+                          name="message"
                           class="form-control c-contact__input"
                           rows="4"
                           placeholder="Descrivi brevemente la tua idea o necessità tecnica..."
+                          required
                         ></textarea>
                       </div>
 
@@ -641,5 +665,41 @@
         </main>
       </div>
     </div>
+
+    <script>
+      (function () {
+        emailjs.init("_B--uALNA7EnfRbo_");
+      })();
+
+      function sendEmail(event, formElement) {
+        event.preventDefault();
+
+        const btn = formElement.querySelector(".c-contact__btn-submit");
+        const originalText = btn.innerText;
+
+        btn.innerText = "Invio...";
+        btn.disabled = true;
+
+        const serviceID = "service_7byrabu";
+        const templateID = "template_hyxi5aj";
+
+        emailjs.sendForm(serviceID, templateID, formElement).then(
+          () => {
+            btn.innerText = "Messaggio Inviato!";
+            formElement.reset();
+
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.disabled = false;
+            }, 3000);
+          },
+          (err) => {
+            btn.innerText = "Errore";
+            btn.disabled = false;
+            alert("Errore nell'invio: " + JSON.stringify(err));
+          },
+        );
+      }
+    </script>
   </body>
 </html>
