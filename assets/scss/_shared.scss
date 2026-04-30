@@ -2,8 +2,7 @@
 // SHARED STYLES (MIXINS & PLACEHOLDERS)
 // ==========================================================================
 
-// Usiamo placeholders (extend) per un CSS più leggero e pulito.
-// Si possono utilizzare anche mixins se in futuro avremo bisogno di passare parametri.
+// Shared placeholders
 
 %section-badge {
   color: var(--bs-primary);

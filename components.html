@@ -1,216 +1,520 @@
 <!doctype html>
-<html lang="it" data-bs-theme="dark">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laboratorio Accessibilità & Componenti - Raimondo Morosini</title>
 
-    <title>Progetto Web - Raimondo Morosini</title>
-    
-    <link href="assets/css/style.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</head>
-<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" data-bs-smooth-scroll="true" tabindex="0">
-    <!-- HEADER -->
-    <header class="site-headerOLD sticky-md-top">
-        <div class="container">
-            <a href="index.html">
-                <i class="bi bi-terminal-fill" aria-hidden="true"></i>
-                <span>&gt;_ Portale Tech</span>
-            </a>
-            
-            <!-- Tasto Mobile Offcanvas -->
-            <button class="btn btn-outline-primary d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas" aria-expanded="false" aria-label="Apri menu laterale">
-                <i class="bi bi-list fs-4" aria-hidden="true"></i>
-            </button>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Menu Standard Desktop -->
-            <nav class="d-none d-md-flex">
-                <ul class="nav">
-                    <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="components.html" class="nav-link">Componenti</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Accessibilità</a></li>
-                </ul>
-            </nav>
-        </div>
+    <style>
+      /* CSS Hacks per forzare gli stati interattivi ai fini del test statico */
+      .force-hover {
+        color: var(--bs-btn-hover-color, inherit) !important;
+        background-color: var(--bs-btn-hover-bg, inherit) !important;
+        border-color: var(--bs-btn-hover-border-color, inherit) !important;
+        text-decoration: underline; /* Per i link */
+      }
+      .force-active {
+        color: var(--bs-btn-active-color, inherit) !important;
+        background-color: var(--bs-btn-active-bg, inherit) !important;
+        border-color: var(--bs-btn-active-border-color, inherit) !important;
+      }
+      .force-focus {
+        color: var(--bs-btn-focus-color, inherit) !important;
+        background-color: var(--bs-btn-focus-bg, inherit) !important;
+        border-color: var(--bs-btn-focus-border-color, inherit) !important;
+        outline: 3px solid #fde047 !important;
+        outline-offset: 2px !important;
+        box-shadow: none !important;
+      }
+      .form-control.force-focus, .form-select.force-focus {
+        outline: 3px solid #fde047 !important;
+        outline-offset: 2px !important;
+        box-shadow: none !important;
+        border-color: inherit !important;
+      }
+
+      /* Filtri Simulazione Daltonismo */
+      .test-grayscale { filter: grayscale(100%); }
+      .test-protanopia { filter: url('#protanopia'); }
+      .test-deuteranopia { filter: url('#deuteranopia'); }
+      .test-tritanopia { filter: url('#tritanopia'); }
+
+      .scenario-box {
+        border: 2px dashed var(--bs-secondary-bg);
+        padding: 3rem;
+        margin-bottom: 3rem;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#testNav">
+
+    <!-- Filtri SVG (Nascosti) -->
+    <svg style="display: none;">
+      <defs>
+        <filter id="protanopia">
+          <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="deuteranopia">
+          <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="tritanopia">
+          <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Header Fissa -->
+    <header class="sticky-top bg-body shadow-sm py-3 mb-5 border-bottom border-primary border-opacity-10">
+      <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0 text-primary fw-bold"><i class="bi bi-braces"></i> Lab Accessibilità</h1>
+        <nav id="testNav" class="nav nav-pills gap-2">
+          <a class="nav-link active" href="#light-mode">Light Mode</a>
+          <a class="nav-link" href="#dark-mode">Dark Mode</a>
+          <a class="nav-link" href="#daltonismo">Daltonismo</a>
+          <a href="index.html" class="btn btn-outline-secondary ms-3">Torna alla Home</a>
+        </nav>
+      </div>
     </header>
 
+    <div class="container">
+      <p class="lead mb-5 text-center">Questa pagina serve per testare il contrasto e la visibilità dei componenti Bootstrap e Custom negli stati standard e forzati.</p>
 
+      <!-- LIGHT MODE SCENARIO -->
+      <section id="light-mode" class="scenario-box bg-body" data-bs-theme="light">
+        <h2 class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2">
+          <i class="bi bi-sun-fill text-warning"></i> Ambiente: Light Mode
+        </h2>
+        
+        <!-- Typography -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">1. Typography & Text Colors</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <p class="lead">Questo è un testo lead di esempio.</p>
+              <p>Questo è un testo normale. <a href="#">Questo è un link standard</a> e questo è un <a href="#" class="force-hover">link in hover</a>.</p>
+            </div>
+            <div class="col-md-6">
+              <p class="text-primary">Text Primary</p>
+              <p class="text-secondary">Text Secondary</p>
+              <p class="text-success">Text Success</p>
+              <p class="text-danger">Text Danger</p>
+              <p class="text-warning">Text Warning (su bg chiaro, controlla contrasto!)</p>
+              <p class="text-info">Text Info</p>
+              <p class="text-body-emphasis">Text Body Emphasis</p>
+              <p class="text-body-secondary">Text Body Secondary</p>
+              <p class="text-body-tertiary">Text Body Tertiary</p>
+            </div>
+          </div>
+        </article>
 
-    <!-- CONTENT -->
-    <div class="container text-center">
-        <div class="row text-start py-5">
-            
-            <!-- SIDEBAR NAV (Scrollspy Target & Offcanvas) -->
-            <aside class="col-lg-3">
-                <div class="position-sticky" style="top: 2rem; z-index: 1040;">
-                    
-                    <div class="offcanvas-lg offcanvas-start rounded-lg-4 shadow-sm bg-body-tertiary border-lg border-secondary border-opacity-10 h-100" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
-                        
-                        <!-- Offcanvas Header (Mobile Only) -->
-                        <div class="offcanvas-header border-bottom">
-                            <h5 class="offcanvas-title text-primary fw-bold d-flex align-items-center gap-2" id="sidebarOffcanvasLabel">
-                                <i class="bi bi-compass" aria-hidden="true"></i>Esplora
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarOffcanvas" aria-label="Chiudi navigazione"></button>
-                        </div>
-                        
-                        <!-- Offcanvas Body -->
-                        <div class="offcanvas-body flex-column p-4 gap-4">
-                            <!-- Titolo (Solo Desktop) -->
-                            <span class="fs-5 fw-bold d-none d-lg-block text-primary border-bottom border-primary border-opacity-10 pb-2">
-                                <i class="bi bi-compass me-2" aria-hidden="true"></i>Navigazione
-                            </span>
-                            
-                            <!-- Scrollspy Link -->
-                            <nav id="sidebar-nav" class="nav nav-pills flex-column w-100 gap-2">
-                                <a class="nav-link rounded-3 text-body-emphasis" href="#hero" data-bs-dismiss="offcanvas" data-bs-target="#sidebarOffcanvas"><i class="bi bi-house me-2" aria-hidden="true"></i>Introduzione</a>
-                                <a class="nav-link rounded-3 text-body-emphasis" href="#chi-sono" data-bs-dismiss="offcanvas" data-bs-target="#sidebarOffcanvas"><i class="bi bi-person-badge me-2" aria-hidden="true"></i>Chi Sono</a>
-                                <a class="nav-link rounded-3 text-body-emphasis" href="#portale-tech" data-bs-dismiss="offcanvas" data-bs-target="#sidebarOffcanvas"><i class="bi bi-rocket me-2" aria-hidden="true"></i>Portale Tech</a>
-                            </nav>
+        <!-- Buttons & States -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">2. Bottoni Bootstrap & Stati Forzati</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Variante</th>
+                <th>Normale</th>
+                <th>Hover (Forzato)</th>
+                <th>Focus (Forzato)</th>
+                <th>Active (Forzato)</th>
+                <th>Disabled</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primary</td>
+                <td><button class="btn btn-primary">Button</button></td>
+                <td><button class="btn btn-primary force-hover">Button</button></td>
+                <td><button class="btn btn-primary force-focus">Button</button></td>
+                <td><button class="btn btn-primary force-active">Button</button></td>
+                <td><button class="btn btn-primary" disabled>Button</button></td>
+              </tr>
+              <tr>
+                <td>Secondary</td>
+                <td><button class="btn btn-secondary">Button</button></td>
+                <td><button class="btn btn-secondary force-hover">Button</button></td>
+                <td><button class="btn btn-secondary force-focus">Button</button></td>
+                <td><button class="btn btn-secondary force-active">Button</button></td>
+                <td><button class="btn btn-secondary" disabled>Button</button></td>
+              </tr>
+              <tr>
+                <td>Outline Primary</td>
+                <td><button class="btn btn-outline-primary">Button</button></td>
+                <td><button class="btn btn-outline-primary force-hover">Button</button></td>
+                <td><button class="btn btn-outline-primary force-focus">Button</button></td>
+                <td><button class="btn btn-outline-primary force-active">Button</button></td>
+                <td><button class="btn btn-outline-primary" disabled>Button</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
 
-                            <!-- Link di Pagina per Mobile -->
-                            <div class="d-md-none border-top border-secondary border-opacity-25 mt-auto pt-3">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item"><a href="index.html" class="nav-link text-body-secondary px-0">Home</a></li>
-                                    <li class="nav-item"><a href="components.html" class="nav-link text-body-secondary px-0">Componenti</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link text-body-secondary px-0">Accessibilità</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Componenti Custom -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">3. Componenti Custom (Tema del Sito)</h3>
+          
+          <div class="row g-4 mb-4">
+            <!-- Feature Card -->
+            <div class="col-md-6">
+              <article class="c-feature-card">
+                <div class="c-feature-card__header">
+                  <div class="c-feature-card__icon-box"><i class="bi bi-mortarboard-fill"></i></div>
+                  <h3 class="c-feature-card__title">Feature Card Test</h3>
                 </div>
-            </aside>
-
-            <!-- MAIN CONTENT SECTIONS -->
-            <main class="col-lg-9 d-flex flex-column gap-5">
-                <section id="hero" class="d-flex flex-column gap-3 pt-2">
-                    <div>
-                        <p class="text-uppercase fw-bold text-primary mb-1">Ciao, sono Raimondo</p>
-                        <h1 class="fw-bold mb-0">Junior Software Developer | Appassionato di Clean Code & Design Patterns </h1>
-                    </div>
-                    <p class="lead text-body-secondary w-75 mx-auto mx-lg-0 mb-0">
-                       Analizzo problemi, disegno schemi e scrivo codice manutenibile. Dallo sviluppo di API come SpringBoot alla logica di basso livello in C, cerco sempre la soluzione più elegante ed efficiente.
-                    </p>
-                    <div>
-                        <a href="components.html" class="btn btn-primary btn-lg rounded-pill fw-bold shadow mt-2">
-                            <i class="bi bi-collection-play me-2" aria-hidden="true"></i>Esplora i Componenti
-                        </a>
-                    </div>
-                </section>
-
-        <!-- CHI SONO SECTION -->
-        <section id="chi-sono" class="bg-body-tertiary rounded-4 shadow p-4 p-md-5" aria-labelledby="chi-sono-heading">
-                <div class="text-center d-flex flex-column gap-3 mb-5">
-                    <div class="d-inline-block">
-                        <span class="badge bg-primary px-3 py-2 rounded-pill">Profilo & Competenze</span>
-                    </div>
-                    <h2 id="chi-sono-heading" class="display-5 fw-bold mb-0">Chi Sono & La Mia Visione</h2>
-                    <p class="lead text-body-emphasis mb-0">
-                        Software Developer orientato all'architettura e alla qualità del codice.
-                    </p>
-                    <p class="text-body-secondary lh-lg mb-0 text-start">
-                        Sono un professionista in formazione tecnica, con un forte focus sulla <strong>Software Architecture</strong> e sui <strong>Design Pattern</strong>. Non mi accontento di scrivere codice funzionante: il mio approccio consiste nell'analizzare a fondo il dominio del problema per costruire fondamenta solide e scalabili. Prima di ogni implementazione ricerco e analizzo pattern architetturali consolidati, per produrre soluzioni eleganti e performanti senza reinventare la ruota. La mia forte propensione analitica e metodologica mi permette di gestire la complessità dei sistemi IT, ponendo sistematicamente al centro dello sviluppo i principi del <strong>Clean Code</strong>.
-                    </p>
+                <div class="c-feature-card__body">
+                  <ul class="c-feature-card__list">
+                    <li class="c-feature-card__item"><i class="bi bi-check2-all"></i><span>Elemento lista primario</span></li>
+                    <li class="c-feature-card__item c-feature-card__item--muted"><i class="bi bi-plus-circle-dotted"></i><span>Elemento lista secondario</span></li>
+                  </ul>
                 </div>
-                
-                <div class="row g-4">
-                    <!-- Colonna Progetti Universitari -->
-                    <div class="col-md-6">
-                        <div class="card h-100 border border-primary border-opacity-25 shadow-sm rounded-4 bg-body overflow-hidden">
-                            <div class="card-header bg-transparent border-bottom border-primary border-opacity-10 p-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-                                        <i class="bi bi-mortarboard-fill fs-4" aria-hidden="true"></i>
-                                    </div>
-                                    <h3 class="h5 fw-bold mb-0">Formazione & Progetti IT</h3>
-                                </div>
-                            </div>
-                            <div class="card-body p-4">
-                                <ul class="list-group list-group-flush bg-transparent d-flex flex-column gap-3">
-                                    <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                        <i class="bi bi-check2-all text-primary fs-5" aria-hidden="true"></i>
-                                        <span>REST API sviluppata in <strong>Spring Boot</strong> per servizi scalabili</span>
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                        <i class="bi bi-check2-all text-primary fs-5" aria-hidden="true"></i>
-                                        <span>Server backend robusto in <strong>C</strong> (Architettura Multiprocesso)</span>
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                        <i class="bi bi-check2-all text-primary fs-5" aria-hidden="true"></i>
-                                        <span>Progettazione e implementazione di una <strong>libreria di strutture dati in C</strong></span>
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                        <i class="bi bi-check2-all text-primary fs-5" aria-hidden="true"></i>
-                                        <span>Front-end reattivo SPA con <strong>Vue.js</strong> e solide basi web (HTML/CSS/JS)</span>
-                                    </li>
-                                    <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                        <i class="bi bi-check2-all text-primary fs-5" aria-hidden="true"></i>
-                                        <span>Sviluppo nativo di un'applicazione mobile in ambiente <strong>Android</strong></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Colonna Progetti Personali -->
-                    <div class="col-md-6">
-                        <div class="card h-100 border border-primary border-opacity-25 shadow-sm rounded-4 bg-body overflow-hidden">
-                            <div class="card-header bg-transparent border-bottom border-primary border-opacity-10 p-4">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
-                                        <i class="bi bi-rocket-takeoff-fill fs-4" aria-hidden="true"></i>
-                                    </div>
-                                    <h3 class="h5 fw-bold mb-0">Esperienze & Progetti Autonomi</h3>
-                                </div>
-                            </div>
-                            <div class="card-body p-4 d-flex flex-column gap-4">
-                                
-                                <div class="p-4 bg-primary bg-opacity-10 rounded-3 border border-primary border-opacity-25 shadow-sm d-flex flex-column gap-2">
-                                    <h4 class="h6 text-uppercase text-primary fw-bold mb-0 d-flex gap-2">
-                                        <i class="bi bi-cpu-fill" aria-hidden="true"></i>Consulenza Tecnica: Ottimizzazione Algoritmica
-                                    </h4>
-                                    <p class="small mb-0 text-body-emphasis">
-                                        Collaborazione attiva con un ingegnere nucleare per il refactoring architetturale di complesse <strong>simulazioni Monte Carlo</strong>. Mi occupo di applicare pattern avanzati e principi di <strong>Clean Code</strong> per trasformare modelli di calcolo in flussi software altamente prestazionali, modulari e pronti per l'estensione tecnica.
-                                    </p>
-                                </div>
+              </article>
+            </div>
 
-                                <div class="d-flex flex-column gap-3">
-                                    <h4 class="h6 text-uppercase text-body-secondary fw-bold mb-0">Tools & Sviluppo Indipendente</h4>
-                                    <ul class="list-group list-group-flush bg-transparent mb-0 d-flex flex-column gap-3">
-                                        <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                            <i class="bi bi-code-square text-secondary mt-1" aria-hidden="true"></i>
-                                            <span>Sviluppo di un'estensione browser per l'automazione e la trascrizione complessa di dati da fatture in layout Excel</span>
-                                        </li>
-                                        <li class="list-group-item bg-transparent d-flex align-items-start gap-3 border-0 p-0">
-                                            <i class="bi bi-plus-circle-dotted text-secondary mt-1" aria-hidden="true"></i>
-                                            <span class="fst-italic text-body-secondary">...ed innumerevoli altri progetti sperimentali in corso.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Project Card -->
+            <div class="col-md-6">
+              <article class="c-project-card c-project-card--java">
+                <div class="c-project-card__accent-bar"></div>
+                <div class="c-project-card__body">
+                  <div class="c-project-card__tags">
+                    <span class="c-project-card__tag c-project-card__tag--primary">Tag 1</span>
+                    <span class="c-project-card__tag c-project-card__tag--muted">Tag 2</span>
+                  </div>
+                  <h3 class="c-project-card__title">Project Card Test</h3>
+                  <p class="c-project-card__desc">Descrizione del progetto con testo a contrasto corretto.</p>
+                  <a href="#" class="c-project-card__link">Vedi progetto <span class="c-project-card__link-arrow">→</span></a>
                 </div>
-        </section>
+              </article>
+            </div>
+          </div>
 
-        <section id="portale-tech" class="text-center d-flex flex-column align-items-center gap-4 py-5">
-                <i class="bi bi-rocket-takeoff text-primary display-1" aria-hidden="true"></i>
-                <h1 class="display-4 fw-bold mb-0">Benvenuto nel Portale Tech</h1>
-                <p class="lead text-body-secondary w-75 mx-auto mb-0">
-                    Questo è il progetto di base di Raimondo Morosini. Il tema personalizzato Dark/Neon è completamente integrato tramite SASS.
-                    Clicca sul pulsante qui sotto per vedere in pratica i componenti personalizzati sui colori del tema.
-                </p>
-                <div>
-                    <a href="components.html" class="btn btn-primary btn-lg rounded-pill fw-bold shadow">
-                        <i class="bi bi-collection-play me-2" aria-hidden="true"></i>Esplora i Componenti
-                    </a>
+          <!-- Contact Form Component -->
+          <div class="c-contact p-4 border rounded">
+            <div class="c-contact__card">
+              <form class="c-contact__form">
+                <div class="c-contact__group mb-4">
+                  <label class="c-contact__label">[ label input ]</label>
+                  <input type="text" class="form-control c-contact__input" placeholder="Test placeholder" />
                 </div>
-        </section>
-            </main>
+                <div class="c-contact__group mb-4">
+                  <label class="c-contact__label">[ label focus ]</label>
+                  <input type="text" class="form-control c-contact__input force-focus" value="Test focus state" />
+                </div>
+                <button type="button" class="btn btn-primary c-contact__btn-submit">Submit Form</button>
+              </form>
+            </div>
+          </div>
+        </article>
+
+        <!-- Forms & Alerts -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">4. Alert, Badge e Form Base</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="alert alert-primary">Alert Primary - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-success">Alert Success - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-danger">Alert Danger - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-warning">Alert Warning - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="mb-3">
+                <span class="badge text-bg-primary">Primary</span>
+                <span class="badge text-bg-secondary">Secondary</span>
+                <span class="badge text-bg-success">Success</span>
+                <span class="badge text-bg-danger">Danger</span>
+                <span class="badge text-bg-warning">Warning</span>
+                <span class="badge text-bg-info">Info</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+              <div class="invalid-feedback d-block mb-3">Errore rosso, verifica contrasto.</div>
+              
+              <input type="text" class="form-control is-valid mb-2" value="Valid data">
+              <div class="valid-feedback d-block mb-3">Successo verde, verifica contrasto.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- DARK MODE SCENARIO -->
+      <section id="dark-mode" class="scenario-box bg-body" data-bs-theme="dark">
+        <h2 class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2">
+          <i class="bi bi-moon-fill text-primary"></i> Ambiente: Dark Mode (Tema Ufficiale)
+        </h2>
+        
+        <!-- Typography -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">1. Typography & Text Colors</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <p class="lead">Questo è un testo lead di esempio.</p>
+              <p>Questo è un testo normale. <a href="#">Questo è un link standard</a> e questo è un <a href="#" class="force-hover">link in hover</a>.</p>
+            </div>
+            <div class="col-md-6">
+              <p class="text-primary">Text Primary</p>
+              <p class="text-secondary">Text Secondary</p>
+              <p class="text-success">Text Success</p>
+              <p class="text-danger">Text Danger</p>
+              <p class="text-warning">Text Warning (su bg scuro, dovrebbe essere leggibile)</p>
+              <p class="text-info">Text Info</p>
+              <p class="text-body-emphasis">Text Body Emphasis</p>
+              <p class="text-body-secondary">Text Body Secondary</p>
+              <p class="text-body-tertiary">Text Body Tertiary</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Buttons & States -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">2. Bottoni Bootstrap & Stati Forzati</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th>Variante</th>
+                  <th>Normale</th>
+                  <th>Hover (Forzato)</th>
+                  <th>Focus (Forzato)</th>
+                  <th>Active (Forzato)</th>
+                  <th>Disabled</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary</td>
+                  <td><button class="btn btn-primary">Button</button></td>
+                  <td><button class="btn btn-primary force-hover">Button</button></td>
+                  <td><button class="btn btn-primary force-focus">Button</button></td>
+                  <td><button class="btn btn-primary force-active">Button</button></td>
+                  <td><button class="btn btn-primary" disabled>Button</button></td>
+                </tr>
+                <tr>
+                  <td>Secondary</td>
+                  <td><button class="btn btn-secondary">Button</button></td>
+                  <td><button class="btn btn-secondary force-hover">Button</button></td>
+                  <td><button class="btn btn-secondary force-focus">Button</button></td>
+                  <td><button class="btn btn-secondary force-active">Button</button></td>
+                  <td><button class="btn btn-secondary" disabled>Button</button></td>
+                </tr>
+                <tr>
+                  <td>Outline Primary</td>
+                  <td><button class="btn btn-outline-primary">Button</button></td>
+                  <td><button class="btn btn-outline-primary force-hover">Button</button></td>
+                  <td><button class="btn btn-outline-primary force-focus">Button</button></td>
+                  <td><button class="btn btn-outline-primary force-active">Button</button></td>
+                  <td><button class="btn btn-outline-primary" disabled>Button</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- Componenti Custom -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">3. Componenti Custom (Tema del Sito)</h3>
+          
+          <div class="row g-4 mb-4">
+            <!-- Feature Card -->
+            <div class="col-md-6">
+              <article class="c-feature-card">
+                <div class="c-feature-card__header">
+                  <div class="c-feature-card__icon-box"><i class="bi bi-mortarboard-fill"></i></div>
+                  <h3 class="c-feature-card__title">Feature Card Test</h3>
+                </div>
+                <div class="c-feature-card__body">
+                  <ul class="c-feature-card__list">
+                    <li class="c-feature-card__item"><i class="bi bi-check2-all"></i><span>Elemento lista primario</span></li>
+                    <li class="c-feature-card__item c-feature-card__item--muted"><i class="bi bi-plus-circle-dotted"></i><span>Elemento lista secondario</span></li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <!-- Project Card -->
+            <div class="col-md-6">
+              <article class="c-project-card c-project-card--java">
+                <div class="c-project-card__accent-bar"></div>
+                <div class="c-project-card__body">
+                  <div class="c-project-card__tags">
+                    <span class="c-project-card__tag c-project-card__tag--primary">Tag 1</span>
+                    <span class="c-project-card__tag c-project-card__tag--muted">Tag 2</span>
+                  </div>
+                  <h3 class="c-project-card__title">Project Card Test</h3>
+                  <p class="c-project-card__desc">Descrizione del progetto con testo a contrasto corretto.</p>
+                  <a href="#" class="c-project-card__link">Vedi progetto <span class="c-project-card__link-arrow">→</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Contact Form Component -->
+          <div class="c-contact p-4 border border-secondary border-opacity-25 rounded bg-body-tertiary">
+            <div class="c-contact__card">
+              <form class="c-contact__form">
+                <div class="c-contact__group mb-4">
+                  <label class="c-contact__label">[ label input ]</label>
+                  <input type="text" class="form-control c-contact__input" placeholder="Test placeholder" />
+                </div>
+                <div class="c-contact__group mb-4">
+                  <label class="c-contact__label">[ label focus ]</label>
+                  <input type="text" class="form-control c-contact__input force-focus" value="Test focus state" />
+                </div>
+                <button type="button" class="btn btn-primary c-contact__btn-submit">Submit Form</button>
+              </form>
+            </div>
+          </div>
+        </article>
+
+        <!-- Forms & Alerts -->
+        <article class="mb-5">
+          <h3 class="h5 mb-4 text-primary">4. Alert, Badge e Form Base</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="alert alert-primary">Alert Primary - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-success">Alert Success - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-danger">Alert Danger - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-warning">Alert Warning - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="mb-3">
+                <span class="badge text-bg-primary">Primary</span>
+                <span class="badge text-bg-secondary">Secondary</span>
+                <span class="badge text-bg-success">Success</span>
+                <span class="badge text-bg-danger">Danger</span>
+                <span class="badge text-bg-warning">Warning</span>
+                <span class="badge text-bg-info">Info</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+              <div class="invalid-feedback d-block mb-3">Errore rosso, verifica contrasto.</div>
+              
+              <input type="text" class="form-control is-valid mb-2" value="Valid data">
+              <div class="valid-feedback d-block mb-3">Successo verde, verifica contrasto.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIMULAZIONE DALTONISMO -->
+      <section id="daltonismo" class="scenario-box bg-body border-warning" data-bs-theme="dark">
+        <h2 class="mb-5 text-warning border-bottom border-warning border-opacity-25 pb-2 d-flex align-items-center gap-2">
+          <i class="bi bi-eye-slash-fill"></i> Simulazione Anomalie Visive (Dark Mode)
+        </h2>
+        
+        <p class="mb-5 text-body-secondary">Le card sottostanti utilizzano filtri CSS e SVG per simulare diverse percezioni dei colori, garantendo che le informazioni (come i badge, i bordi di errore e i link) non si basino esclusivamente sulla tonalità ma anche su un buon contrasto di luminosità.</p>
+
+        <div class="row g-4">
+          <!-- Baseline -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary">
+              <div class="card-header border-bottom border-secondary border-opacity-25">Visione Standard (Baseline)</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grayscale -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary test-grayscale">
+              <div class="card-header border-bottom border-secondary border-opacity-25">Acromatopsia (Scala di Grigi / Luminosità)</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Protanopia -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary test-protanopia">
+              <div class="card-header border-bottom border-secondary border-opacity-25">Protanopia (Cecità al Rosso)</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deuteranopia -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary test-deuteranopia">
+              <div class="card-header border-bottom border-secondary border-opacity-25">Deuteranopia (Cecità al Verde)</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tritanopia -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary test-tritanopia">
+              <div class="card-header border-bottom border-secondary border-opacity-25">Tritanopia (Cecità al Blu)</div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
+                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+      </section>
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

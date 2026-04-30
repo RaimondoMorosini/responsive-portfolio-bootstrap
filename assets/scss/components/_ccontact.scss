@@ -112,8 +112,6 @@
     font-family: var(--bs-font-monospace);
     font-size: 0.8rem;
     font-weight: 600;
-    // [FIX WCAG] color: var(--bs-primary) + opacity: 0.8 → #158744 su #0f172a = 3.89:1 ✗
-    // var(--bs-secondary-color) = rgba(#f1f5f9, 0.80) → ~9:1 su #0f172a ✅
     color: var(--bs-secondary-color);
     margin-bottom: 0.6rem;
   }
@@ -128,7 +126,6 @@
     
     &::placeholder { 
       color: var(--bs-secondary-color);
-      // Era .4 → ~2.8:1 (fail). Ora .6 → ~4.5:1 ✅
       opacity: 0.6;
     }
 

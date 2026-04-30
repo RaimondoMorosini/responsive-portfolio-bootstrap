@@ -29,24 +29,22 @@
 
   &__badge {
     @extend %section-badge;
-    color: $accent; // Override shared color with specific hero variable if needed, or keep it to default
+    color: $accent;
   }
 
   &__title {
     @extend %section-title;
-    font-size: $title-size; // Hero has larger title
+    font-size: $title-size;
     margin: 0;
 
     &-divider {
-      // [FIX WCAG] rgba(0.3) → #10283A su #0f172a = 1.55:1 ✗ (large text: min 3:1)
-      // rgba(0.65) → contrasto ~3.15:1 ✅. Elemento decorativo: aria-hidden="true" nell'HTML.
       color: rgba($accent, 0.65);
       font-weight: 300;
     }
 
     &-focus {
       @include media-breakpoint-up(lg) {
-        display: block; // Enfasi visiva: manda a capo la seconda parte su desktop
+        display: block;
       }
     }
   }
@@ -75,7 +73,6 @@
     
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
-    // Sfruttiamo le CSS Variables di Bootstrap per un Clean Code totale
     --bs-btn-padding-y: 0.8rem;
     --bs-btn-padding-x: 2.2rem;
     --bs-btn-font-weight: 600;

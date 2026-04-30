@@ -1,17 +1,16 @@
-// 1. Funzioni Bootstrap (sempre prima — servono per tint-color, shade-color, ecc.)
+// 1. Funzioni Bootstrap
 @import "../bootstrap-5.3.8/scss/functions";
 
-// 2. Variabili custom (sovrascrivono i !default di Bootstrap)
-//    DEVE stare dopo functions e PRIMA di variables
+// 2. Variabili custom
 @import "custom-variables";
 
-// 3. Variabili Bootstrap (usa i nostri valori grazie ai !default)
+// 3. Variabili Bootstrap
 @import "../bootstrap-5.3.8/scss/variables";
 
-// 3. Mixins
+// 4. Mixins
 @import "../bootstrap-5.3.8/scss/mixins";
 
-// 4. Bootstrap completo
+// 5. Bootstrap completo
 @import "../bootstrap-5.3.8/scss/bootstrap";
 
 @import "layout/header";
@@ -24,3 +23,12 @@
 @import "components/about";
 @import "components/projects";
 @import "components/ccontact";
+
+// ==========================================================================
+// GLOBAL FOCUS
+// ==========================================================================
+*:focus-visible {
+  outline: 3px solid #fde047 !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
