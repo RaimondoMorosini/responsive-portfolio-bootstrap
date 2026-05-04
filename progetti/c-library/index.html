@@ -106,8 +106,45 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
+        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
+          <section
+            id="project-detail"
+            class="c-projects pb-5 pt-4"
+            aria-labelledby="project-detail-heading"
+          >
+            <div class="container">
+              <div class="c-projects__header mb-5">
+                <div class="c-projects__header-text text-center mx-auto">
+                  <span class="c-projects__badge bg-warning text-dark"
+                    >Work In Progress</span
+                  >
+                  <h2
+                    id="project-detail-heading"
+                    class="c-projects__title mt-3"
+                  >
+                    Sviluppo Low-Level &amp; Strutture Dati
+                  </h2>
+                  <p class="c-projects__subtitle">
+                    Documentazione in via di completamento.
+                  </p>
+                  <p
+                    class="c-projects__subtitle mx-auto mt-4"
+                    style="max-width: 600px"
+                  >
+                    In questa pagina descriverò le scelte architetturali, la
+                    gestione manuale della memoria e gli algoritmi implementati.
+                    Sto organizzando il codice in modo che sia facilmente
+                    consultabile per mostrare l'applicazione concreta dei
+                    pattern in C.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
         <aside
-          class="sidebar col-12 col-lg-3"
+          class="sidebar col-12 col-lg-3 order-2 order-lg-1"
           aria-label="Navigazione secondaria"
         >
           <div class="sidebar__inner">
@@ -246,43 +283,6 @@
             </div>
           </div>
         </aside>
-
-        <main class="l-main-content col-12 col-lg-9">
-          <section
-            id="project-detail"
-            class="c-projects pb-5 pt-4"
-            aria-labelledby="project-detail-heading"
-          >
-            <div class="container">
-              <div class="c-projects__header mb-5">
-                <div class="c-projects__header-text text-center mx-auto">
-                  <span class="c-projects__badge bg-warning text-dark"
-                    >Work In Progress</span
-                  >
-                  <h2
-                    id="project-detail-heading"
-                    class="c-projects__title mt-3"
-                  >
-                    Sviluppo Low-Level &amp; Strutture Dati
-                  </h2>
-                  <p class="c-projects__subtitle">
-                    Documentazione in via di completamento.
-                  </p>
-                  <p
-                    class="c-projects__subtitle mx-auto mt-4"
-                    style="max-width: 600px"
-                  >
-                    In questa pagina descriverò le scelte architetturali, la
-                    gestione manuale della memoria e gli algoritmi implementati.
-                    Sto organizzando il codice in modo che sia facilmente
-                    consultabile per mostrare l'applicazione concreta dei
-                    pattern in C.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
       </div>
     </div>
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">

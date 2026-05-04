@@ -102,8 +102,129 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
+        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
+          <section id="projects" class="c-projects pb-5 pt-4" aria-labelledby="projects-heading">
+            <div class="container">
+              <div class="c-projects__header mb-5">
+                <div class="c-projects__header-text text-center mx-auto">
+                  <span class="c-projects__badge bg-warning text-dark"
+                    >Work In Progress</span
+                  >
+                  <h2 id="projects-heading" class="c-projects__title mt-3">Tutti i Progetti</h2>
+                  <p class="c-projects__subtitle">
+                    Questa sezione è in fase di ultimazione. Cliccando sui vari
+                    progetti potrai accedere al loro dettaglio in costruzione.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4" id="c-library-card">
+                  <article class="c-project-card c-project-card--c">
+                    <div class="c-project-card__accent-bar"></div>
+                    <div class="c-project-card__body">
+                      <div class="c-project-card__num">01</div>
+                      <div class="c-project-card__tags">
+                        <span
+                          class="c-project-card__tag c-project-card__tag--primary"
+                          >Linguaggio C</span
+                        >
+                        <span
+                          class="c-project-card__tag c-project-card__tag--muted"
+                          >Low-Level</span
+                        >
+                      </div>
+                      <h3 class="c-project-card__title">
+                        Sviluppo Low-Level & Strutture Dati
+                      </h3>
+                      <p class="c-project-card__desc">
+                        Ho approfondito la gestione manuale della memoria e la
+                        sincronizzazione tra processi. Ho realizzato una
+                        libreria personale di strutture dati.
+                      </p>
+                      <a href="c-library/" class="c-project-card__link">
+                        Vedi progetto <span class="visually-hidden">Sviluppo Low-Level e Strutture Dati</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" id="java-api-card">
+                  <article class="c-project-card c-project-card--java">
+                    <div class="c-project-card__accent-bar"></div>
+                    <div class="c-project-card__body">
+                      <div class="c-project-card__num">02</div>
+                      <div class="c-project-card__tags">
+                        <span
+                          class="c-project-card__tag c-project-card__tag--primary"
+                          >Java</span
+                        >
+                        <span
+                          class="c-project-card__tag c-project-card__tag--primary"
+                          >Spring Boot</span
+                        >
+                        <span
+                          class="c-project-card__tag c-project-card__tag--muted"
+                          >Backend</span
+                        >
+                      </div>
+                      <h3 class="c-project-card__title">
+                        Architetture Backend & API
+                      </h3>
+                      <p class="c-project-card__desc">
+                        Progetto e implemento server RESTful applicando i
+                        principi di modularità. API per la gestione dei dati
+                        curando la separazione delle responsabilità.
+                      </p>
+                      <a href="spring-api/" class="c-project-card__link">
+                        Vedi progetto <span class="visually-hidden">Architetture Backend e API</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" id="vue-app-card">
+                  <article class="c-project-card c-project-card--vue">
+                    <div class="c-project-card__accent-bar"></div>
+                    <div class="c-project-card__body">
+                      <div class="c-project-card__num">03</div>
+                      <div class="c-project-card__tags">
+                        <span
+                          class="c-project-card__tag c-project-card__tag--primary"
+                          >Vue.js</span
+                        >
+                        <span
+                          class="c-project-card__tag c-project-card__tag--primary"
+                          >JavaScript</span
+                        >
+                        <span
+                          class="c-project-card__tag c-project-card__tag--muted"
+                          >Frontend</span
+                        >
+                      </div>
+                      <h3 class="c-project-card__title">
+                        Frontend & Integrazione
+                      </h3>
+                      <p class="c-project-card__desc">
+                        Sviluppo interfacce utente reattive collegate a sistemi
+                        backend. Studio del frontend moderno per la qualità UI.
+                      </p>
+                      <a href="vue-frontend/" class="c-project-card__link">
+                        Vedi progetto <span class="visually-hidden">Frontend e Integrazione</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
         <aside
-          class="sidebar col-12 col-lg-3"
+          class="sidebar col-12 col-lg-3 order-2 order-lg-1"
           aria-label="Navigazione secondaria"
         >
           <div class="sidebar__inner">
@@ -158,127 +279,6 @@
             </div>
           </div>
         </aside>
-
-        <main class="l-main-content col-12 col-lg-9">
-          <section id="projects" class="c-projects pb-5 pt-4" aria-labelledby="projects-heading">
-            <div class="container">
-              <div class="c-projects__header mb-5">
-                <div class="c-projects__header-text text-center mx-auto">
-                  <span class="c-projects__badge bg-warning text-dark"
-                    >Work In Progress</span
-                  >
-                  <h2 id="projects-heading" class="c-projects__title mt-3">Tutti i Progetti</h2>
-                  <p class="c-projects__subtitle">
-                    Questa sezione è in fase di ultimazione. Cliccando sui vari
-                    progetti potrai accedere al loro dettaglio in costruzione.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row g-4">
-                <div class="col-12 col-md-6 col-lg-4" id="c-library-card">
-                  <article class="c-project-card c-project-card--c">
-                    <div class="c-project-card__accent-bar"></div>
-                    <div class="c-project-card__body">
-                      <div class="c-project-card__num">01</div>
-                      <div class="c-project-card__tags">
-                        <span
-                          class="c-project-card__tag c-project-card__tag--primary"
-                          >Linguaggio C</span
-                        >
-                        <span
-                          class="c-project-card__tag c-project-card__tag--muted"
-                          >Low-Level</span
-                        >
-                      </div>
-                      <h3 class="c-project-card__title">
-                        Sviluppo Low-Level & Strutture Dati
-                      </h3>
-                      <p class="c-project-card__desc">
-                        Ho approfondito la gestione manuale della memoria e la
-                        sincronizzazione tra processi. Ho realizzato una
-                        libreria personale di strutture dati.
-                      </p>
-                      <a href="c-library/" class="c-project-card__link">
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
-                      </a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4" id="java-api-card">
-                  <article class="c-project-card c-project-card--java">
-                    <div class="c-project-card__accent-bar"></div>
-                    <div class="c-project-card__body">
-                      <div class="c-project-card__num">02</div>
-                      <div class="c-project-card__tags">
-                        <span
-                          class="c-project-card__tag c-project-card__tag--primary"
-                          >Java</span
-                        >
-                        <span
-                          class="c-project-card__tag c-project-card__tag--primary"
-                          >Spring Boot</span
-                        >
-                        <span
-                          class="c-project-card__tag c-project-card__tag--muted"
-                          >Backend</span
-                        >
-                      </div>
-                      <h3 class="c-project-card__title">
-                        Architetture Backend & API
-                      </h3>
-                      <p class="c-project-card__desc">
-                        Progetto e implemento server RESTful applicando i
-                        principi di modularità. API per la gestione dei dati
-                        curando la separazione delle responsabilità.
-                      </p>
-                      <a href="spring-api/" class="c-project-card__link">
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
-                      </a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4" id="vue-app-card">
-                  <article class="c-project-card c-project-card--vue">
-                    <div class="c-project-card__accent-bar"></div>
-                    <div class="c-project-card__body">
-                      <div class="c-project-card__num">03</div>
-                      <div class="c-project-card__tags">
-                        <span
-                          class="c-project-card__tag c-project-card__tag--primary"
-                          >Vue.js</span
-                        >
-                        <span
-                          class="c-project-card__tag c-project-card__tag--primary"
-                          >JavaScript</span
-                        >
-                        <span
-                          class="c-project-card__tag c-project-card__tag--muted"
-                          >Frontend</span
-                        >
-                      </div>
-                      <h3 class="c-project-card__title">
-                        Frontend & Integrazione
-                      </h3>
-                      <p class="c-project-card__desc">
-                        Sviluppo interfacce utente reattive collegate a sistemi
-                        backend. Studio del frontend moderno per la qualità UI.
-                      </p>
-                      <a href="vue-frontend/" class="c-project-card__link">
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
-                      </a>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
       </div>
     </div>
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">

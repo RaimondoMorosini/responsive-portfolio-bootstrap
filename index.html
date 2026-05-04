@@ -166,57 +166,7 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
-        <aside class="sidebar col-12 col-lg-3" aria-label="Navigazione secondaria">
-          <div class="sidebar__inner">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb m-0 small">
-                <li
-                  class="breadcrumb-item active text-truncate"
-                  aria-current="page"
-                >
-                  Home
-                </li>
-              </ol>
-            </nav>
-
-            <div class="sidebar__section mt-4">
-              <h3
-                class="small text-uppercase fw-bold text-muted mb-3"
-                style="letter-spacing: 1px"
-              >
-                Indice Pagina
-              <nav
-                id="sectionNav"
-                class="nav flex-column nav-pills small gap-1"
-                aria-label="Indice della pagina"
-              >
-                <a class="nav-link d-flex align-items-center px-3" href="#hero">
-                  <i class="bi bi-house-door me-2" aria-hidden="true"></i> Benvenuto
-                </a>
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#chi-sono"
-                >
-                  <i class="bi bi-person-badge me-2" aria-hidden="true"></i> Profilo & Visione
-                </a>
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#projects"
-                >
-                  <i class="bi bi-terminal me-2" aria-hidden="true"></i> Portfolio Progetti
-                </a>
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#contact"
-                >
-                  <i class="bi bi-envelope me-2" aria-hidden="true"></i> Contatti
-                </a>
-              </nav>
-            </div>
-          </div>
-        </aside>
-
-        <main class="l-main-content col-12 col-lg-9">
+        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
           <section id="hero" class="c-hero">
             <div class="c-hero__content">
               <header class="c-hero__header">
@@ -418,7 +368,7 @@
                   </p>
                 </div>
                 <a href="progetti/" class="c-projects__cta-top"
-                  >Tutti i progetti →</a
+                  >Tutti i progetti <span aria-hidden="true">→</span></a
                 >
               </div>
 
@@ -451,8 +401,8 @@
                         href="progetti/c-library/"
                         class="c-project-card__link"
                       >
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
+                        Vedi progetto <span class="visually-hidden">Sviluppo Low-Level e Strutture Dati</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
                       </a>
                     </div>
                   </article>
@@ -489,8 +439,8 @@
                         href="progetti/spring-api/"
                         class="c-project-card__link"
                       >
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
+                        Vedi progetto <span class="visually-hidden">Architetture Backend e API</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
                       </a>
                     </div>
                   </article>
@@ -527,8 +477,8 @@
                         href="progetti/vue-frontend/"
                         class="c-project-card__link"
                       >
-                        Vedi progetto
-                        <span class="c-project-card__link-arrow">→</span>
+                        Vedi progetto <span class="visually-hidden">Frontend e Integrazione</span>
+                        <span class="c-project-card__link-arrow" aria-hidden="true">→</span>
                       </a>
                     </div>
                   </article>
@@ -667,6 +617,56 @@
             </div>
           </section>
         </main>
+
+        <aside class="sidebar col-12 col-lg-3 order-2 order-lg-1" aria-label="Navigazione secondaria">
+          <div class="sidebar__inner">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 small">
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >
+                  Home
+                </li>
+              </ol>
+            </nav>
+
+            <div class="sidebar__section mt-4">
+              <h3
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+                aria-label="Indice della pagina"
+              >
+                <a class="nav-link d-flex align-items-center px-3" href="#hero">
+                  <i class="bi bi-house-door me-2" aria-hidden="true"></i> Benvenuto
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#chi-sono"
+                >
+                  <i class="bi bi-person-badge me-2" aria-hidden="true"></i> Profilo & Visione
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#projects"
+                >
+                  <i class="bi bi-terminal me-2" aria-hidden="true"></i> Portfolio Progetti
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#contact"
+                >
+                  <i class="bi bi-envelope me-2" aria-hidden="true"></i> Contatti
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
 
