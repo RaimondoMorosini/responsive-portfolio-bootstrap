@@ -142,17 +142,18 @@
               <nav
                 id="sectionNav"
                 class="nav flex-column nav-pills small gap-1"
+                aria-label="Indice della pagina"
               >
                 <span
                   class="d-inline-block w-100"
-                  tabindex="0"
                   title="Sezione in costruzione - Work in progress"
                   style="cursor: not-allowed"
                 >
                   <a
                     class="nav-link d-flex align-items-center px-3 disabled"
                     href="#"
-                    style="pointer-events: none"
+                    aria-disabled="true"
+                    tabindex="-1"
                   >
                     <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
                     Introduzione
@@ -160,14 +161,14 @@
                 </span>
                 <span
                   class="d-inline-block w-100"
-                  tabindex="0"
                   title="Sezione in costruzione - Work in progress"
                   style="cursor: not-allowed"
                 >
                   <a
                     class="nav-link d-flex align-items-center px-3 disabled"
                     href="#"
-                    style="pointer-events: none"
+                    aria-disabled="true"
+                    tabindex="-1"
                   >
                     <i class="bi bi-boxes me-2" aria-hidden="true"></i>
                     Struttura Componenti
@@ -175,14 +176,14 @@
                 </span>
                 <span
                   class="d-inline-block w-100"
-                  tabindex="0"
                   title="Sezione in costruzione - Work in progress"
                   style="cursor: not-allowed"
                 >
                   <a
                     class="nav-link d-flex align-items-center px-3 disabled"
                     href="#"
-                    style="pointer-events: none"
+                    aria-disabled="true"
+                    tabindex="-1"
                   >
                     <i class="bi bi-brush me-2" aria-hidden="true"></i> Mockup
                   </a>
@@ -231,15 +232,15 @@
         </aside>
 
         <main class="l-main-content col-12 col-lg-9">
-          <section id="project-detail" class="c-projects pb-5 pt-4">
+          <section id="project-detail" class="c-projects pb-5 pt-4" aria-labelledby="project-detail-heading">
             <div class="container">
               <div class="c-projects__header mb-5">
                 <div class="c-projects__header-text text-center mx-auto">
                   <span class="c-projects__badge bg-warning text-dark"
                     >Work In Progress</span
                   >
-                  <h2 class="c-projects__title mt-3">
-                    Frontend & Integrazione con Vue.js
+                  <h2 id="project-detail-heading" class="c-projects__title mt-3">
+                    Frontend &amp; Integrazione con Vue.js
                   </h2>
                   <p class="c-projects__subtitle">
                     Documentazione in via di completamento.
