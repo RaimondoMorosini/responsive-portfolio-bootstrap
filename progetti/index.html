@@ -50,6 +50,13 @@
     data-bs-offset="120"
     tabindex="0"
   >
+    <a
+      href="#projects"
+      class="visually-hidden-focusable py-2 text-center bg-primary text-white position-absolute w-100"
+      style="z-index: 10000"
+    >
+      Salta al contenuto principale
+    </a>
     <header class="sticky-top header-sito">
       <div class="container">
         <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
@@ -75,13 +82,18 @@
                 <a class="nav-link" href="../">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./">Progetti</a>
+                <a class="nav-link active" aria-current="page" href="./"
+                  >Progetti</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../#contact">Contattami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../cv/">CV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../components.html">Components</a>
               </li>
             </ul>
           </div>
@@ -90,7 +102,10 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
-        <aside class="sidebar col-12 col-lg-3">
+        <aside
+          class="sidebar col-12 col-lg-3"
+          aria-label="Navigazione secondaria"
+        >
           <div class="sidebar__inner">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb m-0 small">
@@ -100,21 +115,43 @@
                 <li
                   class="breadcrumb-item active text-truncate"
                   aria-current="page"
-                >Progetti</li>
+                >
+                  Progetti
+                </li>
               </ol>
             </nav>
 
             <div class="sidebar__section mt-4">
-              <h3 class="small text-uppercase fw-bold text-muted mb-3" style="letter-spacing: 1px;">Indice Pagina</h3>
-              <nav id="sectionNav" class="nav flex-column nav-pills small gap-1">
-                <a class="nav-link d-flex align-items-center px-3" href="#c-library-card">
-                  <i class="bi bi-cpu me-2"></i> Low-Level & C
+              <h3
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+              >
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#c-library-card"
+                >
+                  <i class="bi bi-cpu me-2" aria-hidden="true"></i> Low-Level &
+                  C
                 </a>
-                <a class="nav-link d-flex align-items-center px-3" href="#java-api-card">
-                  <i class="bi bi-server me-2"></i> Backend Java
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#java-api-card"
+                >
+                  <i class="bi bi-server me-2" aria-hidden="true"></i> Backend
+                  Java
                 </a>
-                <a class="nav-link d-flex align-items-center px-3" href="#vue-app-card">
-                  <i class="bi bi-window-sidebar me-2"></i> Frontend Vue.js
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#vue-app-card"
+                >
+                  <i class="bi bi-window-sidebar me-2" aria-hidden="true"></i>
+                  Frontend Vue.js
                 </a>
               </nav>
             </div>
@@ -126,10 +163,13 @@
             <div class="container">
               <div class="c-projects__header mb-5">
                 <div class="c-projects__header-text text-center mx-auto">
-                  <span class="c-projects__badge bg-warning text-dark">Work In Progress</span>
+                  <span class="c-projects__badge bg-warning text-dark"
+                    >Work In Progress</span
+                  >
                   <h2 class="c-projects__title mt-3">Tutti i Progetti</h2>
                   <p class="c-projects__subtitle">
-                    Questa sezione è in fase di ultimazione. Cliccando sui vari progetti potrai accedere al loro dettaglio in costruzione.
+                    Questa sezione è in fase di ultimazione. Cliccando sui vari
+                    progetti potrai accedere al loro dettaglio in costruzione.
                   </p>
                 </div>
               </div>
@@ -158,10 +198,7 @@
                         sincronizzazione tra processi. Ho realizzato una
                         libreria personale di strutture dati.
                       </p>
-                      <a
-                        href="c-library/"
-                        class="c-project-card__link"
-                      >
+                      <a href="c-library/" class="c-project-card__link">
                         Vedi progetto
                         <span class="c-project-card__link-arrow">→</span>
                       </a>
@@ -196,10 +233,7 @@
                         principi di modularità. API per la gestione dei dati
                         curando la separazione delle responsabilità.
                       </p>
-                      <a
-                        href="spring-api/"
-                        class="c-project-card__link"
-                      >
+                      <a href="spring-api/" class="c-project-card__link">
                         Vedi progetto
                         <span class="c-project-card__link-arrow">→</span>
                       </a>
@@ -233,10 +267,7 @@
                         Sviluppo interfacce utente reattive collegate a sistemi
                         backend. Studio del frontend moderno per la qualità UI.
                       </p>
-                      <a
-                        href="vue-frontend/"
-                        class="c-project-card__link"
-                      >
+                      <a href="vue-frontend/" class="c-project-card__link">
                         Vedi progetto
                         <span class="c-project-card__link-arrow">→</span>
                       </a>
@@ -249,5 +280,12 @@
         </main>
       </div>
     </div>
+    <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
+      <div class="container text-center">
+        <p class="mb-0 small text-muted">
+          &copy; 2024 Raimondo Morosini. Progettato con precisione e Clean Code.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

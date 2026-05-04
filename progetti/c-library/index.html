@@ -20,7 +20,11 @@
     <meta name="theme-color" content="#111318" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/favicon/favicon.ico"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -50,6 +54,13 @@
     data-bs-offset="120"
     tabindex="0"
   >
+    <a
+      href="#project-detail"
+      class="visually-hidden-focusable py-2 text-center bg-primary text-white position-absolute w-100"
+      style="z-index: 10000"
+    >
+      Salta al contenuto principale
+    </a>
     <header class="sticky-top header-sito">
       <div class="container">
         <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
@@ -75,13 +86,18 @@
                 <a class="nav-link" href="../../">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../">Progetti</a>
+                <a class="nav-link active" aria-current="page" href="../"
+                  >Progetti</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../../#contact">Contattami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../../cv/">CV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../components.html">Components</a>
               </li>
             </ul>
           </div>
@@ -90,56 +106,139 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
-        <aside class="sidebar col-12 col-lg-3">
+        <aside
+          class="sidebar col-12 col-lg-3"
+          aria-label="Navigazione secondaria"
+        >
           <div class="sidebar__inner">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb m-0 small">
                 <li class="breadcrumb-item">
-                  <a href="../../" class="text-decoration-none text-muted">Home</a>
+                  <a href="../../" class="text-decoration-none text-muted"
+                    >Home</a
+                  >
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="../" class="text-decoration-none text-muted">Progetti</a>
+                  <a href="../" class="text-decoration-none text-muted"
+                    >Progetti</a
+                  >
                 </li>
                 <li
                   class="breadcrumb-item active text-truncate"
                   aria-current="page"
-                >Libreria C</li>
+                >
+                  Libreria C
+                </li>
               </ol>
             </nav>
 
             <div class="sidebar__section mt-4">
-              <h3 class="small text-uppercase fw-bold text-muted mb-3" style="letter-spacing: 1px;">Indice Pagina</h3>
-              <nav id="sectionNav" class="nav flex-column nav-pills small gap-1">
-                <span class="d-inline-block w-100" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                  <a class="nav-link d-flex align-items-center px-3 disabled" href="#" style="pointer-events: none;">
-                    <i class="bi bi-info-circle me-2"></i> Introduzione
+              <h3
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+              >
+                <span
+                  class="d-inline-block w-100"
+                  tabindex="0"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    style="pointer-events: none"
+                  >
+                    <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
+                    Introduzione
                   </a>
                 </span>
-                <span class="d-inline-block w-100" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                  <a class="nav-link d-flex align-items-center px-3 disabled" href="#" style="pointer-events: none;">
-                    <i class="bi bi-cpu me-2"></i> Gestione Memoria
+                <span
+                  class="d-inline-block w-100"
+                  tabindex="0"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    style="pointer-events: none"
+                  >
+                    <i class="bi bi-cpu me-2" aria-hidden="true"></i> Gestione
+                    Memoria
                   </a>
                 </span>
-                <span class="d-inline-block w-100" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                  <a class="nav-link d-flex align-items-center px-3 disabled" href="#" style="pointer-events: none;">
-                    <i class="bi bi-diagram-2 me-2"></i> Strutture Dati
+                <span
+                  class="d-inline-block w-100"
+                  tabindex="0"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    style="pointer-events: none"
+                  >
+                    <i class="bi bi-diagram-2 me-2" aria-hidden="true"></i>
+                    Strutture Dati
                   </a>
                 </span>
                 <div class="nav flex-column ms-3 gap-1 mt-1">
-                  <span class="d-inline-block w-100" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                    <a class="nav-link d-flex align-items-center px-3 disabled small text-muted" href="#" style="pointer-events: none;">
-                      <i class="bi bi-arrow-return-right me-2"></i> Liste Concatenate
+                  <span
+                    class="d-inline-block w-100"
+                    tabindex="0"
+                    title="Sezione in costruzione - Work in progress"
+                    style="cursor: not-allowed"
+                  >
+                    <a
+                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
+                      href="#"
+                      style="pointer-events: none"
+                    >
+                      <i
+                        class="bi bi-arrow-return-right me-2"
+                        aria-hidden="true"
+                      ></i>
+                      Liste Concatenate
                     </a>
                   </span>
-                  <span class="d-inline-block w-100" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                    <a class="nav-link d-flex align-items-center px-3 disabled small text-muted" href="#" style="pointer-events: none;">
-                      <i class="bi bi-arrow-return-right me-2"></i> Alberi Binari
+                  <span
+                    class="d-inline-block w-100"
+                    tabindex="0"
+                    title="Sezione in costruzione - Work in progress"
+                    style="cursor: not-allowed"
+                  >
+                    <a
+                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
+                      href="#"
+                      style="pointer-events: none"
+                    >
+                      <i
+                        class="bi bi-arrow-return-right me-2"
+                        aria-hidden="true"
+                      ></i>
+                      Alberi Binari
                     </a>
                   </span>
                 </div>
-                <span class="d-inline-block w-100 mt-1" tabindex="0" title="Sezione in costruzione - Work in progress" style="cursor: not-allowed;">
-                  <a class="nav-link d-flex align-items-center px-3 disabled" href="#" style="pointer-events: none;">
-                    <i class="bi bi-code-square me-2"></i> Code Snippets
+                <span
+                  class="d-inline-block w-100 mt-1"
+                  tabindex="0"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    style="pointer-events: none"
+                  >
+                    <i class="bi bi-code-square me-2" aria-hidden="true"></i>
+                    Code Snippets
                   </a>
                 </span>
               </nav>
@@ -152,14 +251,24 @@
             <div class="container">
               <div class="c-projects__header mb-5">
                 <div class="c-projects__header-text text-center mx-auto">
-                  <span class="c-projects__badge bg-warning text-dark">Work In Progress</span>
-                  <h2 class="c-projects__title mt-3">Sviluppo Low-Level & Strutture Dati</h2>
+                  <span class="c-projects__badge bg-warning text-dark"
+                    >Work In Progress</span
+                  >
+                  <h2 class="c-projects__title mt-3">
+                    Sviluppo Low-Level & Strutture Dati
+                  </h2>
                   <p class="c-projects__subtitle">
                     Documentazione in via di completamento.
                   </p>
-                  <p class="c-projects__subtitle mx-auto mt-4" style="max-width: 600px;">
-                    In questa pagina descriverò le scelte architetturali, la gestione manuale della memoria e gli algoritmi implementati. 
-                    Sto organizzando il codice in modo che sia facilmente consultabile per mostrare l'applicazione concreta dei pattern in C.
+                  <p
+                    class="c-projects__subtitle mx-auto mt-4"
+                    style="max-width: 600px"
+                  >
+                    In questa pagina descriverò le scelte architetturali, la
+                    gestione manuale della memoria e gli algoritmi implementati.
+                    Sto organizzando il codice in modo che sia facilmente
+                    consultabile per mostrare l'applicazione concreta dei
+                    pattern in C.
                   </p>
                 </div>
               </div>
@@ -168,5 +277,12 @@
         </main>
       </div>
     </div>
+    <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
+      <div class="container text-center">
+        <p class="mb-0 small text-muted">
+          &copy; 2024 Raimondo Morosini. Progettato con precisione e Clean Code.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

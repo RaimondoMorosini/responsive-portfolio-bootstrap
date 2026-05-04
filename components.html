@@ -6,8 +6,14 @@
     <title>Laboratorio Accessibilità & Componenti - Raimondo Morosini</title>
 
     <link href="assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
     <style>
       /* CSS Hacks per forzare gli stati interattivi ai fini del test statico */
@@ -30,7 +36,8 @@
         outline-offset: 2px !important;
         box-shadow: none !important;
       }
-      .form-control.force-focus, .form-select.force-focus {
+      .form-control.force-focus,
+      .form-select.force-focus {
         outline: 3px solid #fde047 !important;
         outline-offset: 2px !important;
         box-shadow: none !important;
@@ -38,10 +45,18 @@
       }
 
       /* Filtri Simulazione Daltonismo */
-      .test-grayscale { filter: grayscale(100%); }
-      .test-protanopia { filter: url('#protanopia'); }
-      .test-deuteranopia { filter: url('#deuteranopia'); }
-      .test-tritanopia { filter: url('#tritanopia'); }
+      .test-grayscale {
+        filter: grayscale(100%);
+      }
+      .test-protanopia {
+        filter: url("#protanopia");
+      }
+      .test-deuteranopia {
+        filter: url("#deuteranopia");
+      }
+      .test-tritanopia {
+        filter: url("#tritanopia");
+      }
 
       .scenario-box {
         border: 2px dashed var(--bs-secondary-bg);
@@ -52,44 +67,76 @@
     </style>
   </head>
   <body class="bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#testNav">
+    <a
+      href="#light-mode"
+      class="visually-hidden-focusable py-2 text-center bg-primary text-white position-absolute w-100"
+      style="z-index: 10000"
+    >
+      Salta al contenuto principale
+    </a>
 
     <!-- Filtri SVG (Nascosti) -->
-    <svg style="display: none;">
+    <svg style="display: none">
       <defs>
         <filter id="protanopia">
-          <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"/>
+          <feColorMatrix
+            type="matrix"
+            values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"
+          />
         </filter>
         <filter id="deuteranopia">
-          <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"/>
+          <feColorMatrix
+            type="matrix"
+            values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"
+          />
         </filter>
         <filter id="tritanopia">
-          <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"/>
+          <feColorMatrix
+            type="matrix"
+            values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"
+          />
         </filter>
       </defs>
     </svg>
 
     <!-- Header Fissa -->
-    <header class="sticky-top bg-body shadow-sm py-3 mb-5 border-bottom border-primary border-opacity-10">
+    <header
+      class="sticky-top bg-body shadow-sm py-3 mb-5 border-bottom border-primary border-opacity-10"
+    >
       <div class="container d-flex justify-content-between align-items-center">
-        <h1 class="h4 mb-0 text-primary fw-bold"><i class="bi bi-braces"></i> Lab Accessibilità</h1>
+        <h1 class="h4 mb-0 text-primary fw-bold">
+          <i class="bi bi-braces" aria-hidden="true"></i> Lab Accessibilità
+        </h1>
         <nav id="testNav" class="nav nav-pills gap-2">
           <a class="nav-link active" href="#light-mode">Light Mode</a>
           <a class="nav-link" href="#dark-mode">Dark Mode</a>
           <a class="nav-link" href="#daltonismo">Daltonismo</a>
-          <a href="index.html" class="btn btn-outline-secondary ms-3">Torna alla Home</a>
+          <a href="index.html" class="btn btn-outline-secondary ms-3"
+            >Torna alla Home</a
+          >
         </nav>
       </div>
     </header>
 
     <div class="container">
-      <p class="lead mb-5 text-center">Questa pagina serve per testare il contrasto e la visibilità dei componenti Bootstrap e Custom negli stati standard e forzati.</p>
+      <p class="lead mb-5 text-center">
+        Questa pagina serve per testare il contrasto e la visibilità dei
+        componenti Bootstrap e Custom negli stati standard e forzati.
+      </p>
 
       <!-- LIGHT MODE SCENARIO -->
-      <section id="light-mode" class="scenario-box bg-body" data-bs-theme="light">
-        <h2 class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2">
-          <i class="bi bi-sun-fill text-warning"></i> Ambiente: Light Mode
+      <section
+        id="light-mode"
+        class="scenario-box bg-body"
+        data-bs-theme="light"
+      >
+        <h2
+          class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2"
+        >
+          <i class="bi bi-sun-fill text-warning" aria-hidden="true"></i>
+          Ambiente: Light Mode
         </h2>
-        
+
         <!-- Typography -->
         <article class="mb-5">
           <h3 class="h5 mb-4 text-primary">1. Typography & Text Colors</h3>
@@ -98,14 +145,20 @@
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
               <p class="lead">Questo è un testo lead di esempio.</p>
-              <p>Questo è un testo normale. <a href="#">Questo è un link standard</a> e questo è un <a href="#" class="force-hover">link in hover</a>.</p>
+              <p>
+                Questo è un testo normale.
+                <a href="#">Questo è un link standard</a> e questo è un
+                <a href="#" class="force-hover">link in hover</a>.
+              </p>
             </div>
             <div class="col-md-6">
               <p class="text-primary">Text Primary</p>
               <p class="text-secondary">Text Secondary</p>
               <p class="text-success">Text Success</p>
               <p class="text-danger">Text Danger</p>
-              <p class="text-warning">Text Warning (su bg chiaro, controlla contrasto!)</p>
+              <p class="text-warning">
+                Text Warning (su bg chiaro, controlla contrasto!)
+              </p>
               <p class="text-info">Text Info</p>
               <p class="text-body-emphasis">Text Body Emphasis</p>
               <p class="text-body-secondary">Text Body Secondary</p>
@@ -116,7 +169,9 @@
 
         <!-- Buttons & States -->
         <article class="mb-5">
-          <h3 class="h5 mb-4 text-primary">2. Bottoni Bootstrap & Stati Forzati</h3>
+          <h3 class="h5 mb-4 text-primary">
+            2. Bottoni Bootstrap & Stati Forzati
+          </h3>
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -132,26 +187,58 @@
               <tr>
                 <td>Primary</td>
                 <td><button class="btn btn-primary">Button</button></td>
-                <td><button class="btn btn-primary force-hover">Button</button></td>
-                <td><button class="btn btn-primary force-focus">Button</button></td>
-                <td><button class="btn btn-primary force-active">Button</button></td>
-                <td><button class="btn btn-primary" disabled>Button</button></td>
+                <td>
+                  <button class="btn btn-primary force-hover">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-primary force-focus">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-primary force-active">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-primary" disabled>Button</button>
+                </td>
               </tr>
               <tr>
                 <td>Secondary</td>
                 <td><button class="btn btn-secondary">Button</button></td>
-                <td><button class="btn btn-secondary force-hover">Button</button></td>
-                <td><button class="btn btn-secondary force-focus">Button</button></td>
-                <td><button class="btn btn-secondary force-active">Button</button></td>
-                <td><button class="btn btn-secondary" disabled>Button</button></td>
+                <td>
+                  <button class="btn btn-secondary force-hover">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-secondary force-focus">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-secondary force-active">Button</button>
+                </td>
+                <td>
+                  <button class="btn btn-secondary" disabled>Button</button>
+                </td>
               </tr>
               <tr>
                 <td>Outline Primary</td>
                 <td><button class="btn btn-outline-primary">Button</button></td>
-                <td><button class="btn btn-outline-primary force-hover">Button</button></td>
-                <td><button class="btn btn-outline-primary force-focus">Button</button></td>
-                <td><button class="btn btn-outline-primary force-active">Button</button></td>
-                <td><button class="btn btn-outline-primary" disabled>Button</button></td>
+                <td>
+                  <button class="btn btn-outline-primary force-hover">
+                    Button
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-primary force-focus">
+                    Button
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-primary force-active">
+                    Button
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-outline-primary" disabled>
+                    Button
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -159,20 +246,32 @@
 
         <!-- Componenti Custom -->
         <article class="mb-5">
-          <h3 class="h5 mb-4 text-primary">3. Componenti Custom (Tema del Sito)</h3>
-          
+          <h3 class="h5 mb-4 text-primary">
+            3. Componenti Custom (Tema del Sito)
+          </h3>
+
           <div class="row g-4 mb-4">
             <!-- Feature Card -->
             <div class="col-md-6">
               <article class="c-feature-card">
                 <div class="c-feature-card__header">
-                  <div class="c-feature-card__icon-box"><i class="bi bi-mortarboard-fill"></i></div>
+                  <div class="c-feature-card__icon-box">
+                    <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                  </div>
                   <h3 class="c-feature-card__title">Feature Card Test</h3>
                 </div>
                 <div class="c-feature-card__body">
                   <ul class="c-feature-card__list">
-                    <li class="c-feature-card__item"><i class="bi bi-check2-all"></i><span>Elemento lista primario</span></li>
-                    <li class="c-feature-card__item c-feature-card__item--muted"><i class="bi bi-plus-circle-dotted"></i><span>Elemento lista secondario</span></li>
+                    <li class="c-feature-card__item">
+                      <i class="bi bi-check2-all" aria-hidden="true"></i
+                      ><span>Elemento lista primario</span>
+                    </li>
+                    <li
+                      class="c-feature-card__item c-feature-card__item--muted"
+                    >
+                      <i class="bi bi-plus-circle-dotted" aria-hidden="true"></i
+                      ><span>Elemento lista secondario</span>
+                    </li>
                   </ul>
                 </div>
               </article>
@@ -184,12 +283,22 @@
                 <div class="c-project-card__accent-bar"></div>
                 <div class="c-project-card__body">
                   <div class="c-project-card__tags">
-                    <span class="c-project-card__tag c-project-card__tag--primary">Tag 1</span>
-                    <span class="c-project-card__tag c-project-card__tag--muted">Tag 2</span>
+                    <span
+                      class="c-project-card__tag c-project-card__tag--primary"
+                      >Tag 1</span
+                    >
+                    <span class="c-project-card__tag c-project-card__tag--muted"
+                      >Tag 2</span
+                    >
                   </div>
                   <h3 class="c-project-card__title">Project Card Test</h3>
-                  <p class="c-project-card__desc">Descrizione del progetto con testo a contrasto corretto.</p>
-                  <a href="#" class="c-project-card__link">Vedi progetto <span class="c-project-card__link-arrow">→</span></a>
+                  <p class="c-project-card__desc">
+                    Descrizione del progetto con testo a contrasto corretto.
+                  </p>
+                  <a href="#" class="c-project-card__link"
+                    >Vedi progetto
+                    <span class="c-project-card__link-arrow">→</span></a
+                  >
                 </div>
               </article>
             </div>
@@ -201,13 +310,26 @@
               <form class="c-contact__form">
                 <div class="c-contact__group mb-4">
                   <label class="c-contact__label">[ label input ]</label>
-                  <input type="text" class="form-control c-contact__input" placeholder="Test placeholder" />
+                  <input
+                    type="text"
+                    class="form-control c-contact__input"
+                    placeholder="Test placeholder"
+                  />
                 </div>
                 <div class="c-contact__group mb-4">
                   <label class="c-contact__label">[ label focus ]</label>
-                  <input type="text" class="form-control c-contact__input force-focus" value="Test focus state" />
+                  <input
+                    type="text"
+                    class="form-control c-contact__input force-focus"
+                    value="Test focus state"
+                  />
                 </div>
-                <button type="button" class="btn btn-primary c-contact__btn-submit">Submit Form</button>
+                <button
+                  type="button"
+                  class="btn btn-primary c-contact__btn-submit"
+                >
+                  Submit Form
+                </button>
               </form>
             </div>
           </div>
@@ -218,10 +340,22 @@
           <h3 class="h5 mb-4 text-primary">4. Alert, Badge e Form Base</h3>
           <div class="row g-4">
             <div class="col-md-6">
-              <div class="alert alert-primary">Alert Primary - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-success">Alert Success - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-danger">Alert Danger - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-warning">Alert Warning - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-primary">
+                Alert Primary - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-success">
+                Alert Success - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-danger">
+                Alert Danger - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-warning">
+                Alert Warning - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
               <div class="mb-3">
                 <span class="badge text-bg-primary">Primary</span>
                 <span class="badge text-bg-secondary">Secondary</span>
@@ -232,11 +366,23 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-              <div class="invalid-feedback d-block mb-3">Errore rosso, verifica contrasto.</div>
-              
-              <input type="text" class="form-control is-valid mb-2" value="Valid data">
-              <div class="valid-feedback d-block mb-3">Successo verde, verifica contrasto.</div>
+              <input
+                type="text"
+                class="form-control is-invalid mb-2"
+                value="Invalid data"
+              />
+              <div class="invalid-feedback d-block mb-3">
+                Errore rosso, verifica contrasto.
+              </div>
+
+              <input
+                type="text"
+                class="form-control is-valid mb-2"
+                value="Valid data"
+              />
+              <div class="valid-feedback d-block mb-3">
+                Successo verde, verifica contrasto.
+              </div>
             </div>
           </div>
         </article>
@@ -244,10 +390,13 @@
 
       <!-- DARK MODE SCENARIO -->
       <section id="dark-mode" class="scenario-box bg-body" data-bs-theme="dark">
-        <h2 class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2">
-          <i class="bi bi-moon-fill text-primary"></i> Ambiente: Dark Mode (Tema Ufficiale)
+        <h2
+          class="mb-5 text-body-emphasis border-bottom border-secondary border-opacity-25 pb-2 d-flex align-items-center gap-2"
+        >
+          <i class="bi bi-moon-fill text-primary" aria-hidden="true"></i>
+          Ambiente: Dark Mode (Tema Ufficiale)
         </h2>
-        
+
         <!-- Typography -->
         <article class="mb-5">
           <h3 class="h5 mb-4 text-primary">1. Typography & Text Colors</h3>
@@ -256,14 +405,20 @@
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
               <p class="lead">Questo è un testo lead di esempio.</p>
-              <p>Questo è un testo normale. <a href="#">Questo è un link standard</a> e questo è un <a href="#" class="force-hover">link in hover</a>.</p>
+              <p>
+                Questo è un testo normale.
+                <a href="#">Questo è un link standard</a> e questo è un
+                <a href="#" class="force-hover">link in hover</a>.
+              </p>
             </div>
             <div class="col-md-6">
               <p class="text-primary">Text Primary</p>
               <p class="text-secondary">Text Secondary</p>
               <p class="text-success">Text Success</p>
               <p class="text-danger">Text Danger</p>
-              <p class="text-warning">Text Warning (su bg scuro, dovrebbe essere leggibile)</p>
+              <p class="text-warning">
+                Text Warning (su bg scuro, dovrebbe essere leggibile)
+              </p>
               <p class="text-info">Text Info</p>
               <p class="text-body-emphasis">Text Body Emphasis</p>
               <p class="text-body-secondary">Text Body Secondary</p>
@@ -274,7 +429,9 @@
 
         <!-- Buttons & States -->
         <article class="mb-5">
-          <h3 class="h5 mb-4 text-primary">2. Bottoni Bootstrap & Stati Forzati</h3>
+          <h3 class="h5 mb-4 text-primary">
+            2. Bottoni Bootstrap & Stati Forzati
+          </h3>
           <div class="table-responsive">
             <table class="table table-bordered table-dark">
               <thead>
@@ -291,26 +448,66 @@
                 <tr>
                   <td>Primary</td>
                   <td><button class="btn btn-primary">Button</button></td>
-                  <td><button class="btn btn-primary force-hover">Button</button></td>
-                  <td><button class="btn btn-primary force-focus">Button</button></td>
-                  <td><button class="btn btn-primary force-active">Button</button></td>
-                  <td><button class="btn btn-primary" disabled>Button</button></td>
+                  <td>
+                    <button class="btn btn-primary force-hover">Button</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary force-focus">Button</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary force-active">Button</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary" disabled>Button</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Secondary</td>
                   <td><button class="btn btn-secondary">Button</button></td>
-                  <td><button class="btn btn-secondary force-hover">Button</button></td>
-                  <td><button class="btn btn-secondary force-focus">Button</button></td>
-                  <td><button class="btn btn-secondary force-active">Button</button></td>
-                  <td><button class="btn btn-secondary" disabled>Button</button></td>
+                  <td>
+                    <button class="btn btn-secondary force-hover">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-secondary force-focus">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-secondary force-active">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-secondary" disabled>Button</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>Outline Primary</td>
-                  <td><button class="btn btn-outline-primary">Button</button></td>
-                  <td><button class="btn btn-outline-primary force-hover">Button</button></td>
-                  <td><button class="btn btn-outline-primary force-focus">Button</button></td>
-                  <td><button class="btn btn-outline-primary force-active">Button</button></td>
-                  <td><button class="btn btn-outline-primary" disabled>Button</button></td>
+                  <td>
+                    <button class="btn btn-outline-primary">Button</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-primary force-hover">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-primary force-focus">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-primary force-active">
+                      Button
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-outline-primary" disabled>
+                      Button
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -319,20 +516,32 @@
 
         <!-- Componenti Custom -->
         <article class="mb-5">
-          <h3 class="h5 mb-4 text-primary">3. Componenti Custom (Tema del Sito)</h3>
-          
+          <h3 class="h5 mb-4 text-primary">
+            3. Componenti Custom (Tema del Sito)
+          </h3>
+
           <div class="row g-4 mb-4">
             <!-- Feature Card -->
             <div class="col-md-6">
               <article class="c-feature-card">
                 <div class="c-feature-card__header">
-                  <div class="c-feature-card__icon-box"><i class="bi bi-mortarboard-fill"></i></div>
+                  <div class="c-feature-card__icon-box">
+                    <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                  </div>
                   <h3 class="c-feature-card__title">Feature Card Test</h3>
                 </div>
                 <div class="c-feature-card__body">
                   <ul class="c-feature-card__list">
-                    <li class="c-feature-card__item"><i class="bi bi-check2-all"></i><span>Elemento lista primario</span></li>
-                    <li class="c-feature-card__item c-feature-card__item--muted"><i class="bi bi-plus-circle-dotted"></i><span>Elemento lista secondario</span></li>
+                    <li class="c-feature-card__item">
+                      <i class="bi bi-check2-all" aria-hidden="true"></i
+                      ><span>Elemento lista primario</span>
+                    </li>
+                    <li
+                      class="c-feature-card__item c-feature-card__item--muted"
+                    >
+                      <i class="bi bi-plus-circle-dotted" aria-hidden="true"></i
+                      ><span>Elemento lista secondario</span>
+                    </li>
                   </ul>
                 </div>
               </article>
@@ -344,30 +553,55 @@
                 <div class="c-project-card__accent-bar"></div>
                 <div class="c-project-card__body">
                   <div class="c-project-card__tags">
-                    <span class="c-project-card__tag c-project-card__tag--primary">Tag 1</span>
-                    <span class="c-project-card__tag c-project-card__tag--muted">Tag 2</span>
+                    <span
+                      class="c-project-card__tag c-project-card__tag--primary"
+                      >Tag 1</span
+                    >
+                    <span class="c-project-card__tag c-project-card__tag--muted"
+                      >Tag 2</span
+                    >
                   </div>
                   <h3 class="c-project-card__title">Project Card Test</h3>
-                  <p class="c-project-card__desc">Descrizione del progetto con testo a contrasto corretto.</p>
-                  <a href="#" class="c-project-card__link">Vedi progetto <span class="c-project-card__link-arrow">→</span></a>
+                  <p class="c-project-card__desc">
+                    Descrizione del progetto con testo a contrasto corretto.
+                  </p>
+                  <a href="#" class="c-project-card__link"
+                    >Vedi progetto
+                    <span class="c-project-card__link-arrow">→</span></a
+                  >
                 </div>
               </article>
             </div>
           </div>
 
           <!-- Contact Form Component -->
-          <div class="c-contact p-4 border border-secondary border-opacity-25 rounded bg-body-tertiary">
+          <div
+            class="c-contact p-4 border border-secondary border-opacity-25 rounded bg-body-tertiary"
+          >
             <div class="c-contact__card">
               <form class="c-contact__form">
                 <div class="c-contact__group mb-4">
                   <label class="c-contact__label">[ label input ]</label>
-                  <input type="text" class="form-control c-contact__input" placeholder="Test placeholder" />
+                  <input
+                    type="text"
+                    class="form-control c-contact__input"
+                    placeholder="Test placeholder"
+                  />
                 </div>
                 <div class="c-contact__group mb-4">
                   <label class="c-contact__label">[ label focus ]</label>
-                  <input type="text" class="form-control c-contact__input force-focus" value="Test focus state" />
+                  <input
+                    type="text"
+                    class="form-control c-contact__input force-focus"
+                    value="Test focus state"
+                  />
                 </div>
-                <button type="button" class="btn btn-primary c-contact__btn-submit">Submit Form</button>
+                <button
+                  type="button"
+                  class="btn btn-primary c-contact__btn-submit"
+                >
+                  Submit Form
+                </button>
               </form>
             </div>
           </div>
@@ -378,10 +612,22 @@
           <h3 class="h5 mb-4 text-primary">4. Alert, Badge e Form Base</h3>
           <div class="row g-4">
             <div class="col-md-6">
-              <div class="alert alert-primary">Alert Primary - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-success">Alert Success - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-danger">Alert Danger - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
-              <div class="alert alert-warning">Alert Warning - Controlla contrasto link <a href="#" class="alert-link">Test Link</a></div>
+              <div class="alert alert-primary">
+                Alert Primary - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-success">
+                Alert Success - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-danger">
+                Alert Danger - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
+              <div class="alert alert-warning">
+                Alert Warning - Controlla contrasto link
+                <a href="#" class="alert-link">Test Link</a>
+              </div>
               <div class="mb-3">
                 <span class="badge text-bg-primary">Primary</span>
                 <span class="badge text-bg-secondary">Secondary</span>
@@ -392,29 +638,57 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-              <div class="invalid-feedback d-block mb-3">Errore rosso, verifica contrasto.</div>
-              
-              <input type="text" class="form-control is-valid mb-2" value="Valid data">
-              <div class="valid-feedback d-block mb-3">Successo verde, verifica contrasto.</div>
+              <input
+                type="text"
+                class="form-control is-invalid mb-2"
+                value="Invalid data"
+              />
+              <div class="invalid-feedback d-block mb-3">
+                Errore rosso, verifica contrasto.
+              </div>
+
+              <input
+                type="text"
+                class="form-control is-valid mb-2"
+                value="Valid data"
+              />
+              <div class="valid-feedback d-block mb-3">
+                Successo verde, verifica contrasto.
+              </div>
             </div>
           </div>
         </article>
       </section>
 
       <!-- SIMULAZIONE DALTONISMO -->
-      <section id="daltonismo" class="scenario-box bg-body border-warning" data-bs-theme="dark">
-        <h2 class="mb-5 text-warning border-bottom border-warning border-opacity-25 pb-2 d-flex align-items-center gap-2">
-          <i class="bi bi-eye-slash-fill"></i> Simulazione Anomalie Visive (Dark Mode)
+      <section
+        id="daltonismo"
+        class="scenario-box bg-body border-warning"
+        data-bs-theme="dark"
+      >
+        <h2
+          class="mb-5 text-warning border-bottom border-warning border-opacity-25 pb-2 d-flex align-items-center gap-2"
+        >
+          <i class="bi bi-eye-slash-fill" aria-hidden="true"></i> Simulazione
+          Anomalie Visive (Dark Mode)
         </h2>
-        
-        <p class="mb-5 text-body-secondary">Le card sottostanti utilizzano filtri CSS e SVG per simulare diverse percezioni dei colori, garantendo che le informazioni (come i badge, i bordi di errore e i link) non si basino esclusivamente sulla tonalità ma anche su un buon contrasto di luminosità.</p>
+
+        <p class="mb-5 text-body-secondary">
+          Le card sottostanti utilizzano filtri CSS e SVG per simulare diverse
+          percezioni dei colori, garantendo che le informazioni (come i badge, i
+          bordi di errore e i link) non si basino esclusivamente sulla tonalità
+          ma anche su un buon contrasto di luminosità.
+        </p>
 
         <div class="row g-4">
           <!-- Baseline -->
           <div class="col-lg-6">
             <div class="card h-100 bg-body-tertiary">
-              <div class="card-header border-bottom border-secondary border-opacity-25">Visione Standard (Baseline)</div>
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Visione Standard (Baseline)
+              </div>
               <div class="card-body">
                 <div class="mb-3">
                   <span class="badge text-bg-primary">Primary</span>
@@ -425,8 +699,14 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
               </div>
             </div>
           </div>
@@ -434,7 +714,11 @@
           <!-- Grayscale -->
           <div class="col-lg-6">
             <div class="card h-100 bg-body-tertiary test-grayscale">
-              <div class="card-header border-bottom border-secondary border-opacity-25">Acromatopsia (Scala di Grigi / Luminosità)</div>
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Acromatopsia (Scala di Grigi / Luminosità)
+              </div>
               <div class="card-body">
                 <div class="mb-3">
                   <span class="badge text-bg-primary">Primary</span>
@@ -445,8 +729,14 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
               </div>
             </div>
           </div>
@@ -454,7 +744,11 @@
           <!-- Protanopia -->
           <div class="col-lg-6">
             <div class="card h-100 bg-body-tertiary test-protanopia">
-              <div class="card-header border-bottom border-secondary border-opacity-25">Protanopia (Cecità al Rosso)</div>
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Protanopia (Cecità al Rosso)
+              </div>
               <div class="card-body">
                 <div class="mb-3">
                   <span class="badge text-bg-primary">Primary</span>
@@ -465,8 +759,14 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
               </div>
             </div>
           </div>
@@ -474,7 +774,11 @@
           <!-- Deuteranopia -->
           <div class="col-lg-6">
             <div class="card h-100 bg-body-tertiary test-deuteranopia">
-              <div class="card-header border-bottom border-secondary border-opacity-25">Deuteranopia (Cecità al Verde)</div>
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Deuteranopia (Cecità al Verde)
+              </div>
               <div class="card-body">
                 <div class="mb-3">
                   <span class="badge text-bg-primary">Primary</span>
@@ -485,8 +789,14 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
               </div>
             </div>
           </div>
@@ -494,7 +804,11 @@
           <!-- Tritanopia -->
           <div class="col-lg-6">
             <div class="card h-100 bg-body-tertiary test-tritanopia">
-              <div class="card-header border-bottom border-secondary border-opacity-25">Tritanopia (Cecità al Blu)</div>
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Tritanopia (Cecità al Blu)
+              </div>
               <div class="card-body">
                 <div class="mb-3">
                   <span class="badge text-bg-primary">Primary</span>
@@ -505,16 +819,27 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input type="text" class="form-control is-invalid mb-2" value="Invalid data">
-                <p class="text-danger small mb-0">Questo testo è rosso (errore).</p>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
               </div>
             </div>
           </div>
         </div>
-
       </section>
-
     </div>
 
+    <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
+      <div class="container text-center">
+        <p class="mb-0 small text-muted">
+          &copy; 2024 Raimondo Morosini. Progettato con precisione e Clean Code.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
