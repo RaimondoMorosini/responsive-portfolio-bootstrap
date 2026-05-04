@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- INSERIRE TITOLO DELLA PAGINA QUI -->
+    <title>Titolo Pagina - Raimondo Morosini</title>
+
+    <!-- Adattare il percorso (es: ../assets/css/style.css se si è in una sottocartella) -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Meta Theme Color -->
+    <meta name="theme-color" content="#111318" />
+
+    <!-- Favicon (Adattare i percorsi se in sottocartella, es: ../assets/favicon/...) -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#sectionNav"
+    data-bs-offset="120"
+    tabindex="0"
+  >
+    <!-- HEADER NAVBAR GLOBALE -->
+    <header class="sticky-top header-sito">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+          <!-- Adattare il link della home se in sottocartella, es: ../index.html -->
+          <a class="navbar-brand d-flex align-items-center" href="./">
+            <span>_RM</span>
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="./">Home</a>
+              </li>
+              <li class="nav-item">
+                <!-- Aggiungere class="active" e aria-current="page" se è la pagina corrente -->
+                <a class="nav-link" href="progetti/">Progetti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contattami</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cv/">CV</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row align-items-stretch">
+        <!-- SIDEBAR -->
+        <aside class="sidebar col-12 col-lg-3">
+          <div class="sidebar__inner">
+            <!-- BREADCRUMBS -->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb m-0 small">
+                <!-- Esempio breadcrumb:
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active text-truncate" aria-current="page">Nome Pagina</li>
+                -->
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >
+                  Nome Pagina
+                </li>
+              </ol>
+            </nav>
+
+            <!-- INDICE DELLA PAGINA (SCROLLSPY) -->
+            <div class="sidebar__section mt-4">
+              <h3
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+              >
+                <!-- INSERIRE I LINK ALLE SEZIONI QUI -->
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#sezione-1"
+                >
+                  <i class="bi bi-hash me-2"></i> Sezione 1
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="l-main-content col-12 col-lg-9">
+          <!-- INIZIO SEZIONE DI ESEMPIO -->
+          <section id="sezione-1">
+            <div class="container">
+              <h1>Titolo della Pagina</h1>
+              <p>Contenuto della nuova pagina da inserire qui...</p>
+            </div>
+          </section>
+          <!-- FINE SEZIONE DI ESEMPIO -->
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
