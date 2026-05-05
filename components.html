@@ -15,56 +15,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
 
-    <style>
-      /* CSS Hacks per forzare gli stati interattivi ai fini del test statico */
-      .force-hover {
-        color: var(--bs-btn-hover-color, inherit) !important;
-        background-color: var(--bs-btn-hover-bg, inherit) !important;
-        border-color: var(--bs-btn-hover-border-color, inherit) !important;
-        text-decoration: underline; /* Per i link */
-      }
-      .force-active {
-        color: var(--bs-btn-active-color, inherit) !important;
-        background-color: var(--bs-btn-active-bg, inherit) !important;
-        border-color: var(--bs-btn-active-border-color, inherit) !important;
-      }
-      .force-focus {
-        color: var(--bs-btn-focus-color, inherit) !important;
-        background-color: var(--bs-btn-focus-bg, inherit) !important;
-        border-color: var(--bs-btn-focus-border-color, inherit) !important;
-        outline: 3px solid #fde047 !important;
-        outline-offset: 2px !important;
-        box-shadow: none !important;
-      }
-      .form-control.force-focus,
-      .form-select.force-focus {
-        outline: 3px solid #fde047 !important;
-        outline-offset: 2px !important;
-        box-shadow: none !important;
-        border-color: inherit !important;
-      }
 
-      /* Filtri Simulazione Daltonismo */
-      .test-grayscale {
-        filter: grayscale(100%);
-      }
-      .test-protanopia {
-        filter: url("#protanopia");
-      }
-      .test-deuteranopia {
-        filter: url("#deuteranopia");
-      }
-      .test-tritanopia {
-        filter: url("#tritanopia");
-      }
-
-      .scenario-box {
-        border: 2px dashed var(--bs-secondary-bg);
-        padding: 3rem;
-        margin-bottom: 3rem;
-        border-radius: 12px;
-      }
-    </style>
   </head>
   <body class="bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#testNav">
     <a
@@ -75,29 +26,7 @@
       Salta al contenuto principale
     </a>
 
-    <!-- Filtri SVG (Nascosti) -->
-    <svg style="display: none">
-      <defs>
-        <filter id="protanopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"
-          />
-        </filter>
-        <filter id="deuteranopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"
-          />
-        </filter>
-        <filter id="tritanopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"
-          />
-        </filter>
-      </defs>
-    </svg>
+
 
     <!-- Header Fissa -->
     <header
@@ -742,9 +671,8 @@
             </div>
           </div>
 
-          <!-- Protanopia -->
           <div class="col-lg-6">
-            <div class="card h-100 bg-body-tertiary test-protanopia">
+            <div class="card h-100 bg-body-tertiary protanopia">
               <div
                 class="card-header border-bottom border-secondary border-opacity-25"
               >
@@ -772,9 +700,8 @@
             </div>
           </div>
 
-          <!-- Deuteranopia -->
           <div class="col-lg-6">
-            <div class="card h-100 bg-body-tertiary test-deuteranopia">
+            <div class="card h-100 bg-body-tertiary deuteranopia">
               <div
                 class="card-header border-bottom border-secondary border-opacity-25"
               >
@@ -802,13 +729,41 @@
             </div>
           </div>
 
-          <!-- Tritanopia -->
           <div class="col-lg-6">
-            <div class="card h-100 bg-body-tertiary test-tritanopia">
+            <div class="card h-100 bg-body-tertiary tritanopia">
               <div
                 class="card-header border-bottom border-secondary border-opacity-25"
               >
                 Tritanopia (Cecità al Blu)
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">Primary</span>
+                  <span class="badge text-bg-danger">Errore</span>
+                  <span class="badge text-bg-success">Successo</span>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary me-2">Primario</button>
+                  <button class="btn btn-outline-danger">Pericolo</button>
+                </div>
+                <input
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <p class="text-danger small mb-0">
+                  Questo testo è rosso (errore).
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Achromatopsia -->
+          <div class="col-lg-6">
+            <div class="card h-100 bg-body-tertiary achromatopsia">
+              <div
+                class="card-header border-bottom border-secondary border-opacity-25"
+              >
+                Achromatopsia (Cecità Totale ai Colori)
               </div>
               <div class="card-body">
                 <div class="mb-3">

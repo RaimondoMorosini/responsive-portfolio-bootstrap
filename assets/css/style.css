@@ -12441,6 +12441,79 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   transform: scale(0.98);
 }
 
+.force-hover {
+  color: var(--bs-btn-hover-color, inherit) !important;
+  background-color: var(--bs-btn-hover-bg, inherit) !important;
+  border-color: var(--bs-btn-hover-border-color, inherit) !important;
+  text-decoration: underline;
+}
+
+.force-active {
+  color: var(--bs-btn-active-color, inherit) !important;
+  background-color: var(--bs-btn-active-bg, inherit) !important;
+  border-color: var(--bs-btn-active-border-color, inherit) !important;
+}
+
+.force-focus {
+  color: var(--bs-btn-focus-color, inherit) !important;
+  background-color: var(--bs-btn-focus-bg, inherit) !important;
+  border-color: var(--bs-btn-focus-border-color, inherit) !important;
+  outline: 3px solid #fde047 !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+
+.form-control.force-focus,
+.form-select.force-focus {
+  outline: 3px solid #fde047 !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+.protanopia {
+  filter: url("../filters.svg#protanopia");
+}
+
+.protanomaly {
+  filter: url("../filters.svg#protanomaly");
+}
+
+.deuteranopia {
+  filter: url("../filters.svg#deuteranopia");
+}
+
+.deuteranomaly {
+  filter: url("../filters.svg#deuteranomaly");
+}
+
+.tritanopia {
+  filter: url("../filters.svg#tritanopia");
+}
+
+.tritanomaly {
+  filter: url("../filters.svg#tritanomaly");
+}
+
+.achromatopsia {
+  filter: url("../filters.svg#achromatopsia");
+}
+
+.achromatomaly {
+  filter: url("../filters.svg#achromatomaly");
+}
+
+.test-grayscale {
+  filter: grayscale(100%);
+}
+
+.scenario-box {
+  border: 2px dashed var(--bs-secondary-bg);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+}
+
 *:focus-visible {
   outline: 3px solid #fde047 !important;
   outline-offset: 2px !important;
