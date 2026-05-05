@@ -38,8 +38,12 @@
     margin: 0;
 
     &-divider {
-      color: rgba($accent, 0.65);
-      font-weight: 300;
+      display: inline-block;
+      width: 3px;
+      height: 0.8em;
+      background-color: rgba($accent, 0.45);
+      vertical-align: middle;
+      margin: 0 1rem;
     }
 
     &-focus {

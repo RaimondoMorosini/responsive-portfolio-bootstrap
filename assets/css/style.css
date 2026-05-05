@@ -11971,8 +11971,12 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   margin: 0;
 }
 .c-hero__title-divider {
-  color: rgba(22, 163, 74, 0.65);
-  font-weight: 300;
+  display: inline-block;
+  width: 3px;
+  height: 0.8em;
+  background-color: rgba(22, 163, 74, 0.45);
+  vertical-align: middle;
+  margin: 0 1rem;
 }
 @media (min-width: 992px) {
   .c-hero__title-focus {
@@ -12512,6 +12516,10 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   padding: 3rem;
   margin-bottom: 3rem;
   border-radius: 12px;
+}
+
+.visually-hidden-focusable.bg-primary {
+  background-color: #15803d !important;
 }
 
 *:focus-visible {

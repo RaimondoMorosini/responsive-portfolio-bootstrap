@@ -26,6 +26,15 @@
 @import "accessibility-lab";
 
 // ==========================================================================
+// ACCESSIBILITY OVERRIDES
+// ==========================================================================
+.visually-hidden-focusable.bg-primary {
+  // Use darker green for skip link to meet 4.5:1 contrast ratio
+  background-color: $green-dark !important;
+}
+
+
+// ==========================================================================
 // GLOBAL FOCUS
 // ==========================================================================
 *:focus-visible {
