@@ -22,7 +22,7 @@ $yellow: #ca8a04;
 // 2. COLORI TEMA
 // --------------------------------------------------------------------------
 
-$primary:   $green;
+$primary:   #15803d; 
 $secondary: #64748b;
 $success:   #15803d;
 $info:      #0284c7;
@@ -52,8 +52,9 @@ $body-tertiary-color:     rgba(#f1f5f9, .55);
 // 4. LINK
 // --------------------------------------------------------------------------
 
-$link-color:              $primary;
-$link-hover-color:        shade-color($primary, 20%);
+$primary-light:           #4ade80;
+$link-color:              $primary-light;
+$link-hover-color:        tint-color($primary-light, 20%);
 
 
 // --------------------------------------------------------------------------

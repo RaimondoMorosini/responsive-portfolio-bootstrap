@@ -47,7 +47,6 @@
     data-bs-spy="scroll"
     data-bs-target="#sectionNav"
     data-bs-offset="120"
-    tabindex="0"
   >
     <a
       href="#sezione-1"
@@ -60,7 +59,7 @@
     <!-- HEADER NAVBAR GLOBALE -->
     <header class="sticky-top header-sito">
       <div class="container">
-        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Menu principale">
           <!-- Adattare il link della home se in sottocartella, es: ../index.html -->
           <a class="navbar-brand d-flex align-items-center" href="./">
             <span>_RM</span>
@@ -73,7 +72,7 @@
             data-bs-target="#mainNav"
             aria-controls="mainNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="Apri menu di navigazione"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -105,25 +104,13 @@
     <div class="container-fluid">
       <div class="row align-items-stretch">
         <!-- SIDEBAR -->
-        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
-          <!-- INIZIO SEZIONE DI ESEMPIO -->
-          <section id="sezione-1">
-            <div class="container">
-              <h1>Titolo della Pagina</h1>
-              <p>Contenuto della nuova pagina da inserire qui...</p>
-            </div>
-          </section>
-          <!-- FINE SEZIONE DI ESEMPIO -->
-        </main>
-
-        <!-- MAIN CONTENT -->
         <aside
-          class="sidebar col-12 col-lg-3 order-2 order-lg-1"
+          class="sidebar col-12 col-lg-3"
           aria-label="Navigazione secondaria"
         >
           <div class="sidebar__inner">
             <!-- BREADCRUMBS -->
-            <nav aria-label="breadcrumb">
+            <nav aria-label="Percorso di navigazione">
               <ol class="breadcrumb m-0 small">
                 <!-- Esempio breadcrumb:
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
@@ -162,6 +149,18 @@
             </div>
           </div>
         </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="l-main-content col-12 col-lg-9">
+          <!-- INIZIO SEZIONE DI ESEMPIO -->
+          <section id="sezione-1">
+            <div class="container">
+              <h1>Titolo della Pagina</h1>
+              <p>Contenuto della nuova pagina da inserire qui...</p>
+            </div>
+          </section>
+          <!-- FINE SEZIONE DI ESEMPIO -->
+        </main>
       </div>
     </div>
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">

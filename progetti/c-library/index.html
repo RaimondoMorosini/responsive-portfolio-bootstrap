@@ -52,7 +52,6 @@
     data-bs-spy="scroll"
     data-bs-target="#sectionNav"
     data-bs-offset="120"
-    tabindex="0"
   >
     <a
       href="#project-detail"
@@ -63,7 +62,7 @@
     </a>
     <header class="sticky-top header-sito">
       <div class="container">
-        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Menu principale">
           <a class="navbar-brand d-flex align-items-center" href="../../">
             <span>_RM</span>
           </a>
@@ -75,7 +74,7 @@
             data-bs-target="#mainNav"
             aria-controls="mainNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="Apri menu di navigazione"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -106,11 +105,162 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
-        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
+        <aside
+          class="sidebar col-12 col-lg-3"
+          aria-label="Navigazione secondaria"
+        >
+          <div class="sidebar__inner">
+            <nav aria-label="Percorso di navigazione">
+              <ol class="breadcrumb m-0 small">
+                <li class="breadcrumb-item">
+                  <a href="../../" class="text-decoration-none text-muted"
+                    >Home</a
+                  >
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../" class="text-decoration-none text-muted"
+                    >Progetti</a
+                  >
+                </li>
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >
+                  Libreria C
+                </li>
+              </ol>
+            </nav>
+
+            <div class="sidebar__section mt-4">
+              <h3
+                id="sidebar-nav-title"
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+                aria-labelledby="sidebar-nav-title"
+              >
+                <span
+                  class="d-inline-block w-100"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                  tabindex="0"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    aria-disabled="true"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
+                    Introduzione
+                  </a>
+                </span>
+                <span
+                  class="d-inline-block w-100"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                  tabindex="0"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    aria-disabled="true"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-cpu me-2" aria-hidden="true"></i> Gestione
+                    Memoria
+                  </a>
+                </span>
+                <span
+                  class="d-inline-block w-100"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                  tabindex="0"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    aria-disabled="true"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-diagram-2 me-2" aria-hidden="true"></i>
+                    Strutture Dati
+                  </a>
+                </span>
+                <div class="nav flex-column ms-3 gap-1 mt-1">
+                  <span
+                    class="d-inline-block w-100"
+                    title="Sezione in costruzione - Work in progress"
+                    style="cursor: not-allowed"
+                    tabindex="0"
+                  >
+                    <a
+                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
+                      href="#"
+                      style="pointer-events: none"
+                      aria-disabled="true"
+                      tabindex="-1"
+                    >
+                      <i
+                        class="bi bi-arrow-return-right me-2"
+                        aria-hidden="true"
+                      ></i>
+                      Liste Concatenate
+                    </a>
+                  </span>
+                  <span
+                    class="d-inline-block w-100"
+                    title="Sezione in costruzione - Work in progress"
+                    style="cursor: not-allowed"
+                    tabindex="0"
+                  >
+                    <a
+                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
+                      href="#"
+                      style="pointer-events: none"
+                      aria-disabled="true"
+                      tabindex="-1"
+                    >
+                      <i
+                        class="bi bi-arrow-return-right me-2"
+                        aria-hidden="true"
+                      ></i>
+                      Alberi Binari
+                    </a>
+                  </span>
+                </div>
+                <span
+                  class="d-inline-block w-100 mt-1"
+                  title="Sezione in costruzione - Work in progress"
+                  style="cursor: not-allowed"
+                >
+                  <a
+                    class="nav-link d-flex align-items-center px-3 disabled"
+                    href="#"
+                    style="pointer-events: none"
+                    aria-disabled="true"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-code-square me-2" aria-hidden="true"></i>
+                    Code Snippets
+                  </a>
+                </span>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <main class="l-main-content col-12 col-lg-9">
           <section
             id="project-detail"
             class="c-projects pb-5 pt-4"
             aria-labelledby="project-detail-heading"
+            tabindex="-1"
           >
             <div class="container">
               <div class="c-projects__header mb-5">
@@ -142,147 +292,6 @@
             </div>
           </section>
         </main>
-
-        <aside
-          class="sidebar col-12 col-lg-3 order-2 order-lg-1"
-          aria-label="Navigazione secondaria"
-        >
-          <div class="sidebar__inner">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb m-0 small">
-                <li class="breadcrumb-item">
-                  <a href="../../" class="text-decoration-none text-muted"
-                    >Home</a
-                  >
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="../" class="text-decoration-none text-muted"
-                    >Progetti</a
-                  >
-                </li>
-                <li
-                  class="breadcrumb-item active text-truncate"
-                  aria-current="page"
-                >
-                  Libreria C
-                </li>
-              </ol>
-            </nav>
-
-            <div class="sidebar__section mt-4">
-              <h3
-                class="small text-uppercase fw-bold text-muted mb-3"
-                style="letter-spacing: 1px"
-              >
-                Indice Pagina
-              </h3>
-              <nav
-                id="sectionNav"
-                class="nav flex-column nav-pills small gap-1"
-                aria-label="Indice della pagina"
-              >
-                <span
-                  class="d-inline-block w-100"
-                  title="Sezione in costruzione - Work in progress"
-                  style="cursor: not-allowed"
-                >
-                  <a
-                    class="nav-link d-flex align-items-center px-3 disabled"
-                    href="#"
-                    aria-disabled="true"
-                    tabindex="-1"
-                  >
-                    <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
-                    Introduzione
-                  </a>
-                </span>
-                <span
-                  class="d-inline-block w-100"
-                  title="Sezione in costruzione - Work in progress"
-                  style="cursor: not-allowed"
-                >
-                  <a
-                    class="nav-link d-flex align-items-center px-3 disabled"
-                    href="#"
-                    aria-disabled="true"
-                    tabindex="-1"
-                  >
-                    <i class="bi bi-cpu me-2" aria-hidden="true"></i> Gestione
-                    Memoria
-                  </a>
-                </span>
-                <span
-                  class="d-inline-block w-100"
-                  title="Sezione in costruzione - Work in progress"
-                  style="cursor: not-allowed"
-                >
-                  <a
-                    class="nav-link d-flex align-items-center px-3 disabled"
-                    href="#"
-                    aria-disabled="true"
-                    tabindex="-1"
-                  >
-                    <i class="bi bi-diagram-2 me-2" aria-hidden="true"></i>
-                    Strutture Dati
-                  </a>
-                </span>
-                <div class="nav flex-column ms-3 gap-1 mt-1">
-                  <span
-                    class="d-inline-block w-100"
-                    tabindex="0"
-                    title="Sezione in costruzione - Work in progress"
-                    style="cursor: not-allowed"
-                  >
-                    <a
-                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
-                      href="#"
-                      style="pointer-events: none"
-                    >
-                      <i
-                        class="bi bi-arrow-return-right me-2"
-                        aria-hidden="true"
-                      ></i>
-                      Liste Concatenate
-                    </a>
-                  </span>
-                  <span
-                    class="d-inline-block w-100"
-                    tabindex="0"
-                    title="Sezione in costruzione - Work in progress"
-                    style="cursor: not-allowed"
-                  >
-                    <a
-                      class="nav-link d-flex align-items-center px-3 disabled small text-muted"
-                      href="#"
-                      style="pointer-events: none"
-                    >
-                      <i
-                        class="bi bi-arrow-return-right me-2"
-                        aria-hidden="true"
-                      ></i>
-                      Alberi Binari
-                    </a>
-                  </span>
-                </div>
-                <span
-                  class="d-inline-block w-100 mt-1"
-                  tabindex="0"
-                  title="Sezione in costruzione - Work in progress"
-                  style="cursor: not-allowed"
-                >
-                  <a
-                    class="nav-link d-flex align-items-center px-3 disabled"
-                    href="#"
-                    style="pointer-events: none"
-                  >
-                    <i class="bi bi-code-square me-2" aria-hidden="true"></i>
-                    Code Snippets
-                  </a>
-                </span>
-              </nav>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">

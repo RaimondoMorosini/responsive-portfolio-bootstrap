@@ -48,7 +48,6 @@
     data-bs-spy="scroll"
     data-bs-target="#sectionNav"
     data-bs-offset="120"
-    tabindex="0"
   >
     <a
       href="#projects"
@@ -59,7 +58,7 @@
     </a>
     <header class="sticky-top header-sito">
       <div class="container">
-        <nav class="navbar navbar-expand-lg py-2" aria-label="Main menu">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Menu principale">
           <a class="navbar-brand d-flex align-items-center" href="../">
             <span>_RM</span>
           </a>
@@ -71,7 +70,7 @@
             data-bs-target="#mainNav"
             aria-controls="mainNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="Apri menu di navigazione"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -102,8 +101,66 @@
     </header>
     <div class="container-fluid">
       <div class="row align-items-stretch">
-        <main class="l-main-content col-12 col-lg-9 order-1 order-lg-2">
-          <section id="projects" class="c-projects pb-5 pt-4" aria-labelledby="projects-heading">
+        <aside
+          class="sidebar col-12 col-lg-3"
+          aria-label="Navigazione secondaria"
+        >
+          <div class="sidebar__inner">
+            <nav aria-label="Percorso di navigazione">
+              <ol class="breadcrumb m-0 small">
+                <li class="breadcrumb-item">
+                  <a href="../" class="text-decoration-none text-muted">Home</a>
+                </li>
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >
+                  Progetti
+                </li>
+              </ol>
+            </nav>
+
+            <div class="sidebar__section mt-4">
+              <h3
+                id="sidebar-nav-title"
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Indice Pagina
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+                aria-labelledby="sidebar-nav-title"
+              >
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#c-library-card"
+                >
+                  <i class="bi bi-cpu me-2" aria-hidden="true"></i> Low-Level &
+                  C
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#java-api-card"
+                >
+                  <i class="bi bi-server me-2" aria-hidden="true"></i> Backend
+                  Java
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#vue-app-card"
+                >
+                  <i class="bi bi-window-sidebar me-2" aria-hidden="true"></i>
+                  Frontend Vue.js
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <main class="l-main-content col-12 col-lg-9">
+          <section id="projects" class="c-projects pb-5 pt-4" aria-labelledby="projects-heading" tabindex="-1">
             <div class="container">
               <div class="c-projects__header mb-5">
                 <div class="c-projects__header-text text-center mx-auto">
@@ -222,63 +279,6 @@
             </div>
           </section>
         </main>
-
-        <aside
-          class="sidebar col-12 col-lg-3 order-2 order-lg-1"
-          aria-label="Navigazione secondaria"
-        >
-          <div class="sidebar__inner">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb m-0 small">
-                <li class="breadcrumb-item">
-                  <a href="../" class="text-decoration-none text-muted">Home</a>
-                </li>
-                <li
-                  class="breadcrumb-item active text-truncate"
-                  aria-current="page"
-                >
-                  Progetti
-                </li>
-              </ol>
-            </nav>
-
-            <div class="sidebar__section mt-4">
-              <h3
-                class="small text-uppercase fw-bold text-muted mb-3"
-                style="letter-spacing: 1px"
-              >
-                Indice Pagina
-              </h3>
-              <nav
-                id="sectionNav"
-                class="nav flex-column nav-pills small gap-1"
-                aria-label="Indice della pagina"
-              >
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#c-library-card"
-                >
-                  <i class="bi bi-cpu me-2" aria-hidden="true"></i> Low-Level &
-                  C
-                </a>
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#java-api-card"
-                >
-                  <i class="bi bi-server me-2" aria-hidden="true"></i> Backend
-                  Java
-                </a>
-                <a
-                  class="nav-link d-flex align-items-center px-3"
-                  href="#vue-app-card"
-                >
-                  <i class="bi bi-window-sidebar me-2" aria-hidden="true"></i>
-                  Frontend Vue.js
-                </a>
-              </nav>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
