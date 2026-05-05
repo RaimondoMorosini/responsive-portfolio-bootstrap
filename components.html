@@ -14,19 +14,15 @@
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     ></script>
-
-
   </head>
   <body class="bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#testNav">
     <a
-      href="#light-mode"
+      href="#main-content"
       class="visually-hidden-focusable py-2 text-center bg-primary text-white position-absolute w-100"
       style="z-index: 10000"
     >
       Salta al contenuto principale
     </a>
-
-
 
     <!-- Header Fissa -->
     <header
@@ -47,7 +43,7 @@
       </div>
     </header>
 
-    <div class="container">
+    <main id="main-content" class="container">
       <p class="lead mb-5 text-center">
         Questa pagina serve per testare il contrasto e la visibilità dei
         componenti Bootstrap e Custom negli stati standard e forzati.
@@ -239,16 +235,22 @@
             <div class="c-contact__card">
               <form class="c-contact__form">
                 <div class="c-contact__group mb-4">
-                  <label class="c-contact__label">[ label input ]</label>
+                  <label for="contact-name-light" class="c-contact__label"
+                    >[ label input ]</label
+                  >
                   <input
+                    id="contact-name-light"
                     type="text"
                     class="form-control c-contact__input"
                     placeholder="Test placeholder"
                   />
                 </div>
                 <div class="c-contact__group mb-4">
-                  <label class="c-contact__label">[ label focus ]</label>
+                  <label for="contact-focus-light" class="c-contact__label"
+                    >[ label focus ]</label
+                  >
                   <input
+                    id="contact-focus-light"
                     type="text"
                     class="form-control c-contact__input force-focus"
                     value="Test focus state"
@@ -296,22 +298,34 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control is-invalid mb-2"
-                value="Invalid data"
-              />
-              <div class="invalid-feedback d-block mb-3">
-                Errore rosso, verifica contrasto.
+              <div class="mb-3">
+                <label for="input-invalid-light" class="form-label"
+                  >Input con errore</label
+                >
+                <input
+                  id="input-invalid-light"
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <div class="invalid-feedback d-block mb-3">
+                  Errore rosso, verifica contrasto.
+                </div>
               </div>
 
-              <input
-                type="text"
-                class="form-control is-valid mb-2"
-                value="Valid data"
-              />
-              <div class="valid-feedback d-block mb-3">
-                Successo verde, verifica contrasto.
+              <div class="mb-3">
+                <label for="input-valid-light" class="form-label"
+                  >Input valido</label
+                >
+                <input
+                  id="input-valid-light"
+                  type="text"
+                  class="form-control is-valid mb-2"
+                  value="Valid data"
+                />
+                <div class="valid-feedback d-block mb-3">
+                  Successo verde, verifica contrasto.
+                </div>
               </div>
             </div>
           </div>
@@ -511,16 +525,22 @@
             <div class="c-contact__card">
               <form class="c-contact__form">
                 <div class="c-contact__group mb-4">
-                  <label class="c-contact__label">[ label input ]</label>
+                  <label for="contact-name-dark" class="c-contact__label"
+                    >[ label input ]</label
+                  >
                   <input
+                    id="contact-name-dark"
                     type="text"
                     class="form-control c-contact__input"
                     placeholder="Test placeholder"
                   />
                 </div>
                 <div class="c-contact__group mb-4">
-                  <label class="c-contact__label">[ label focus ]</label>
+                  <label for="contact-focus-dark" class="c-contact__label"
+                    >[ label focus ]</label
+                  >
                   <input
+                    id="contact-focus-dark"
                     type="text"
                     class="form-control c-contact__input force-focus"
                     value="Test focus state"
@@ -568,22 +588,34 @@
               </div>
             </div>
             <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control is-invalid mb-2"
-                value="Invalid data"
-              />
-              <div class="invalid-feedback d-block mb-3">
-                Errore rosso, verifica contrasto.
+              <div class="mb-3">
+                <label for="input-invalid-dark" class="form-label"
+                  >Input con errore</label
+                >
+                <input
+                  id="input-invalid-dark"
+                  type="text"
+                  class="form-control is-invalid mb-2"
+                  value="Invalid data"
+                />
+                <div class="invalid-feedback d-block mb-3">
+                  Errore rosso, verifica contrasto.
+                </div>
               </div>
 
-              <input
-                type="text"
-                class="form-control is-valid mb-2"
-                value="Valid data"
-              />
-              <div class="valid-feedback d-block mb-3">
-                Successo verde, verifica contrasto.
+              <div class="mb-3">
+                <label for="input-valid-dark" class="form-label"
+                  >Input valido</label
+                >
+                <input
+                  id="input-valid-dark"
+                  type="text"
+                  class="form-control is-valid mb-2"
+                  value="Valid data"
+                />
+                <div class="valid-feedback d-block mb-3">
+                  Successo verde, verifica contrasto.
+                </div>
               </div>
             </div>
           </div>
@@ -629,11 +661,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-baseline" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-baseline"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -659,11 +697,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-grayscale" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-grayscale"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -688,11 +732,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-protanopia" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-protanopia"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -717,11 +767,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-deuteranopia" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-deuteranopia"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -746,11 +802,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-tritanopia" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-tritanopia"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -775,11 +837,17 @@
                   <button class="btn btn-primary me-2">Primario</button>
                   <button class="btn btn-outline-danger">Pericolo</button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control is-invalid mb-2"
-                  value="Invalid data"
-                />
+                <div class="mb-3">
+                  <label for="input-achromatopsia" class="form-label"
+                    >Esempio errore</label
+                  >
+                  <input
+                    id="input-achromatopsia"
+                    type="text"
+                    class="form-control is-invalid mb-2"
+                    value="Invalid data"
+                  />
+                </div>
                 <p class="text-danger small mb-0">
                   Questo testo è rosso (errore).
                 </p>
@@ -788,7 +856,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
 
     <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
       <div class="container text-center">
