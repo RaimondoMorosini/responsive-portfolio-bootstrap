@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raimondomorosini.github.io/responsive-portfolio-bootstrap/sitemap.xml
