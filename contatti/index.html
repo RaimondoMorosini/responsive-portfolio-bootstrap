@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contattami - Raimondo Morosini</title>
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Carica la libreria EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <!-- Meta Theme Color -->
+    <meta name="theme-color" content="#111318" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Android/Chrome Manifest -->
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/contatti/"
+    />
+    <meta property="og:title" content="Contattami - Raimondo Morosini" />
+    <meta
+      property="og:description"
+      content="Hai un'idea o una necessità tecnica? Contattami per una collaborazione focalizzata su Clean Code e Architettura Software."
+    />
+    <meta
+      property="og:image"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/assets/img/og-image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/contatti/"
+    />
+    <meta property="twitter:title" content="Contattami - Raimondo Morosini" />
+    <meta
+      property="twitter:description"
+      content="Hai un'idea o una necessità tecnica? Contattami per una collaborazione focalizzata su Clean Code e Architettura Software."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/assets/img/og-image.png"
+    />
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#sectionNav"
+    data-bs-offset="120"
+  >
+    <a
+      href="#contact-content"
+      class="visually-hidden-focusable py-2 text-center bg-primary text-white position-absolute w-100"
+      style="z-index: 10000"
+    >
+      Salta al contenuto principale
+    </a>
+
+    <header class="sticky-top l-header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg py-2" aria-label="Menu principale">
+          <a class="navbar-brand d-flex align-items-center" href="../">
+            <span>_RM</span>
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Apri menu di navigazione"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link" href="../">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../progetti/">Progetti</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./"
+                  >Contattami</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../cv/">CV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../laboratorio/">Componenti</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="row align-items-stretch">
+        <aside
+          class="l-sidebar col-12 col-lg-3"
+          aria-label="Navigazione secondaria"
+        >
+          <div class="l-sidebar__inner">
+            <nav aria-label="Percorso di navigazione">
+              <ol class="breadcrumb m-0 small">
+                <li class="breadcrumb-item">
+                  <a href="../" class="text-decoration-none text-muted">Home</a>
+                </li>
+                <li
+                  class="breadcrumb-item active text-truncate"
+                  aria-current="page"
+                >
+                  Contattami
+                </li>
+              </ol>
+            </nav>
+
+            <div class="l-sidebar__section mt-4">
+              <h3
+                id="sidebar-nav-title"
+                class="small text-uppercase fw-bold text-muted mb-3"
+                style="letter-spacing: 1px"
+              >
+                Opzioni Contatto
+              </h3>
+              <nav
+                id="sectionNav"
+                class="nav flex-column nav-pills small gap-1"
+                aria-labelledby="sidebar-nav-title"
+              >
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#contact-content"
+                >
+                  <i class="bi bi-envelope me-2" aria-hidden="true"></i> Modulo
+                  Messaggio
+                </a>
+                <a
+                  class="nav-link d-flex align-items-center px-3"
+                  href="#direct-contacts"
+                >
+                  <i class="bi bi-person-lines-fill me-2" aria-hidden="true"></i>
+                  Riferimenti Diretti
+                </a>
+              </nav>
+            </div>
+          </div>
+        </aside>
+
+        <main id="contact-content" class="l-main-content col-12 col-lg-9">
+          <section
+            class="c-contact py-5"
+            aria-labelledby="contact-page-heading"
+          >
+            <div class="container">
+              <header class="mb-5">
+                <span class="c-contact__badge">Get in touch</span>
+                <h1 id="contact-page-heading" class="c-contact__title">
+                  Contattami
+                </h1>
+                <p class="c-contact__description">
+                  Hai una proposta di collaborazione, una domanda tecnica o vuoi
+                  semplicemente scambiare due chiacchiere sul Clean Code? Compila
+                  il modulo o usa i riferimenti qui sotto.
+                </p>
+              </header>
+
+              <div class="row g-5">
+                <div class="col-12 col-lg-7">
+                  <div class="c-contact__card">
+                    <form
+                      id="contact-form"
+                      class="c-contact__form"
+                      aria-label="Modulo di contatto"
+                      onsubmit="sendEmail(event, this)"
+                    >
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label" for="contact_name"
+                          >[ identità ]</label
+                        >
+                        <input
+                          id="contact_name"
+                          name="from_name"
+                          type="text"
+                          class="form-control c-contact__input"
+                          placeholder="Il tuo nome o azienda"
+                          autocomplete="name"
+                          required
+                        />
+                      </div>
+
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label" for="contact_email"
+                          >[ contatto ]</label
+                        >
+                        <input
+                          id="contact_email"
+                          name="email"
+                          type="email"
+                          class="form-control c-contact__input"
+                          placeholder="tua.email@esempio.it"
+                          autocomplete="email"
+                          required
+                        />
+                      </div>
+
+                      <div class="c-contact__group mb-4">
+                        <label class="c-contact__label" for="contact_message"
+                          >[ messaggio ]</label
+                        >
+                        <textarea
+                          id="contact_message"
+                          name="message"
+                          class="form-control c-contact__input"
+                          rows="6"
+                          placeholder="Descrivi brevemente la tua idea o necessità tecnica..."
+                          required
+                        ></textarea>
+                      </div>
+
+                      <button
+                        type="submit"
+                        class="btn btn-primary c-contact__btn-submit w-100"
+                      >
+                        Invia Messaggio
+                      </button>
+
+                      <div
+                        aria-live="polite"
+                        class="visually-hidden form-status-message mt-3"
+                      ></div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-5" id="direct-contacts">
+                  <div class="c-contact__info">
+                    <h2 class="h4 mb-4">Riferimenti Diretti</h2>
+                    <div class="c-contact__channels">
+                      <div class="c-contact__node mb-4">
+                        <div class="c-contact__node-icon">
+                          <i class="bi bi-envelope-at" aria-hidden="true"></i>
+                        </div>
+                        <div class="c-contact__node-body">
+                          <span class="c-contact__node-label">[ email ]</span>
+                          <a
+                            href="mailto:morosini.raimondorg@gmail.com"
+                            class="c-contact__node-link"
+                          >
+                            morosini.raimondorg@gmail.com
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="c-contact__node mb-4">
+                        <div class="c-contact__node-icon">
+                          <i class="bi bi-terminal" aria-hidden="true"></i>
+                        </div>
+                        <div class="c-contact__node-body">
+                          <span class="c-contact__node-label">[ github ]</span>
+                          <a
+                            href="https://github.com/RaimondoMorosini"
+                            class="c-contact__node-link"
+                            >RaimondoMorosini</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-5 p-4 bg-body-tertiary rounded-3 border">
+                      <h3 class="h5 mb-3">Perché contattarmi?</h3>
+                      <ul class="list-unstyled small gap-2 d-flex flex-column">
+                        <li>
+                          <i class="bi bi-check2-circle text-primary me-2"></i>
+                          Collaborazioni su progetti Open Source
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle text-primary me-2"></i>
+                          Refactoring di basi di codice complesse
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle text-primary me-2"></i>
+                          Sviluppo Backend & Systems
+                        </li>
+                        <li>
+                          <i class="bi bi-check2-circle text-primary me-2"></i>
+                          Consulenza su Clean Code & Pattern
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="py-4 border-top border-secondary border-opacity-10 bg-body">
+      <div class="container text-center">
+        <p class="mb-0 small text-muted">
+          &copy; 2024 Raimondo Morosini. Progettato con precisione e Clean Code.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        emailjs.init("_B--uALNA7EnfRbo_");
+      })();
+
+      function sendEmail(event, formElement) {
+        event.preventDefault();
+
+        const btn = formElement.querySelector(".c-contact__btn-submit");
+        const statusMsg = formElement.querySelector(".form-status-message");
+        const originalText = btn.innerText;
+
+        btn.innerText = "Invio...";
+        btn.disabled = true;
+        if (statusMsg) {
+          statusMsg.innerText = "Invio in corso...";
+          statusMsg.classList.remove("visually-hidden");
+        }
+
+        const serviceID = "service_7byrabu";
+        const templateID = "template_hyxi5aj";
+
+        emailjs.sendForm(serviceID, templateID, formElement).then(
+          () => {
+            btn.innerText = "Messaggio Inviato!";
+            if (statusMsg) statusMsg.innerText = "Messaggio inviato con successo!";
+            formElement.reset();
+
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.disabled = false;
+              if (statusMsg) {
+                statusMsg.innerText = "";
+                statusMsg.classList.add("visually-hidden");
+              }
+            }, 3000);
+          },
+          (err) => {
+            btn.innerText = "Errore";
+            btn.disabled = false;
+            if (statusMsg)
+              statusMsg.innerText =
+                "Impossibile inviare il messaggio in questo momento. Riprova più tardi.";
+            console.error("Errore nell'invio dell'email:", err);
+          },
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -43,6 +43,44 @@
 
     <!-- Android/Chrome Manifest -->
     <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/cv/"
+    />
+    <meta
+      property="og:title"
+      content="Curriculum Vitae - Raimondo Morosini"
+    />
+    <meta
+      property="og:description"
+      content="Percorso accademico e professionale di Raimondo Morosini, Junior Software Developer appassionato di Clean Code."
+    />
+    <meta
+      property="og:image"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/assets/img/og-image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/cv/"
+    />
+    <meta
+      property="twitter:title"
+      content="Curriculum Vitae - Raimondo Morosini"
+    />
+    <meta
+      property="twitter:description"
+      content="Percorso accademico e professionale di Raimondo Morosini, Junior Software Developer appassionato di Clean Code."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raimondomorosini.github.io/responsive-portfolio-bootstrap/assets/img/og-image.png"
+    />
   </head>
   <body
     data-bs-spy="scroll"
@@ -85,7 +123,7 @@
                 <a class="nav-link" href="../progetti/">Progetti</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../#contact">Contattami</a>
+                <a class="nav-link" href="../contatti/">Contattami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./">CV</a>
@@ -205,41 +243,122 @@
         </aside>
 
         <main class="l-main-content col-12 col-lg-9">
-          <section id="cv" class="c-projects pb-5 pt-4" aria-labelledby="cv-heading" tabindex="-1">
+          <section id="cv-header" class="py-5 bg-body-tertiary border-bottom">
             <div class="container">
-              <div class="c-projects__header mb-5">
-                <div class="c-projects__header-text text-center mx-auto">
-                  <span class="c-projects__badge bg-warning text-dark"
-                    >Work In Progress</span
-                  >
-                  <h2 id="cv-heading" class="c-projects__title mt-3">Curriculum Vitae</h2>
-                  <p class="c-projects__subtitle">
-                    Questa sezione è in fase di ultimazione. Presto inserirò i
-                    dettagli in modo interattivo.
-                  </p>
-                  <p
-                    class="c-projects__subtitle mx-auto"
-                    style="max-width: 600px"
-                  >
-                    Nel frattempo puoi scaricare il formato cartaceo premendo il
-                    pulsante qui sotto.
-                  </p>
+              <div class="row align-items-center g-4">
+                <div class="col-12 col-md-8">
+                  <span class="badge bg-primary mb-2">Curriculum Vitae</span>
+                  <h1 id="cv-heading" class="display-4 fw-bold">Raimondo Morosini</h1>
+                  <p class="lead text-muted mb-0">Junior Software Developer | Clean Code Enthusiast</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end">
+                  <a href="../assets/pdf/cv.pdf" class="btn btn-outline-primary" target="_blank">
+                    <i class="bi bi-download me-2"></i> Scarica PDF
+                  </a>
                 </div>
               </div>
+            </div>
+          </section>
 
-              <div class="text-center mt-5 mb-5 pb-5">
-                <a
-                  href="../assets/pdf/cv.pdf"
-                  class="btn btn-primary c-btn-hero"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    class="bi bi-file-earmark-pdf-fill me-2"
-                    aria-hidden="true"
-                  ></i>
-                  Scarica il PDF del CV
-                </a>
+          <section id="cv-content" class="py-5">
+            <div class="container">
+              <div class="row g-5">
+                <div class="col-12 col-lg-8">
+                  <!-- Profilo -->
+                  <div class="mb-5" id="info-personali">
+                    <h2 class="h3 mb-4 d-flex align-items-center">
+                      <i class="bi bi-person-circle text-primary me-3"></i> Profilo
+                    </h2>
+                    <p>
+                      Sono uno studente universitario appassionato di design pattern e progettazione del software. 
+                      Il mio approccio alla programmazione è metodico: prediligo l'analisi della struttura e dell'architettura 
+                      prima di passare all'implementazione. Cerco costantemente soluzioni consolidate (Clean Code) 
+                      per risolvere problemi complessi in modo elegante e manutenibile.
+                    </p>
+                  </div>
+
+                  <!-- Progetti Accademici -->
+                  <div class="mb-5" id="formazione">
+                    <h2 class="h3 mb-4 d-flex align-items-center">
+                      <i class="bi bi-mortarboard text-primary me-3"></i> Progetti Accademici & Formazione
+                    </h2>
+                    <div class="timeline">
+                      <article class="mb-4 border-start border-primary border-4 ps-4">
+                        <h3 class="h5 mb-1">REST API Backend</h3>
+                        <p class="small text-muted">Spring Boot | Java</p>
+                        <p>Sviluppo di un sistema API scalabile applicando i principi di modularità e sicurezza.</p>
+                      </article>
+                      <article class="mb-4 border-start border-primary border-4 ps-4">
+                        <h3 class="h5 mb-1">Backend Server Multiprocesso</h3>
+                        <p class="small text-muted">Linguaggio C</p>
+                        <p>Implementazione di un server a basso livello con gestione della memoria e sincronizzazione tra processi.</p>
+                      </article>
+                      <article class="mb-4 border-start border-primary border-4 ps-4">
+                        <h3 class="h5 mb-1">Frontend SPA & Mobile</h3>
+                        <p class="small text-muted">Vue.js | Android Native</p>
+                        <p>Creazione di interfacce utente reattive e sviluppo di applicazioni native in ambiente Android.</p>
+                      </article>
+                    </div>
+                  </div>
+
+                  <!-- Esperienze e Collaborazioni -->
+                  <div class="mb-5" id="esperienze">
+                    <h2 class="h3 mb-4 d-flex align-items-center">
+                      <i class="bi bi-briefcase text-primary me-3"></i> Collaborazioni Professionali
+                    </h2>
+                    <article class="p-4 bg-body-tertiary rounded-3 border">
+                      <h3 class="h5 mb-2">Consulenza Tecnica: Ottimizzazione Algoritmica</h3>
+                      <p class="small text-primary fw-bold">Collaborazione con Ingegnere Nucleare</p>
+                      <p class="mb-0">
+                        Refactoring architetturale di codici per simulazioni <strong>Monte Carlo</strong>. 
+                        Applicazione dei principi di <strong>Clean Code</strong> per migliorare la flessibilità, 
+                        la manutenibilità e le performance del software di calcolo scientifico.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                  <!-- Competenze Tecniche -->
+                  <div class="mb-5" id="competenze">
+                    <h2 class="h4 mb-4">Competenze Tecniche</h2>
+                    <div class="mb-4">
+                      <h3 class="h6 text-uppercase small fw-bold text-muted">Linguaggi & Framework</h3>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-secondary">Java</span>
+                        <span class="badge bg-secondary">Spring Boot</span>
+                        <span class="badge bg-secondary">C</span>
+                        <span class="badge bg-secondary">HTML5 / CSS3</span>
+                        <span class="badge bg-secondary">JavaScript</span>
+                        <span class="badge bg-secondary">Vue.js</span>
+                        <span class="badge bg-secondary">Sass</span>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <h3 class="h6 text-uppercase small fw-bold text-muted">Metodologie</h3>
+                      <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Clean Code</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Design Patterns</li>
+                        <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Software Architecture</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Progetti Personali -->
+                  <div class="mb-5">
+                    <h2 class="h4 mb-4">Progetti Personali</h2>
+                    <ul class="list-unstyled small">
+                      <li class="mb-3">
+                        <strong>Trascrizione Dati Fatture</strong><br>
+                        <span class="text-muted">Estensione per automatizzare l'estrazione dati in Excel.</span>
+                      </li>
+                      <li class="mb-3">
+                        <strong>Digital Business Cards</strong><br>
+                        <span class="text-muted">Tool per la generazione di output digitali da immagini.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
