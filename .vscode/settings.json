@@ -1,5 +1,11 @@
 {
-  "liveSassCompile.settings.args": ["--quiet-deps"],
+  "liveSassCompile.settings.args": [
+    "--quiet-deps",
+    "--silence-deprecation=import",
+    "--silence-deprecation=global-builtin",
+    "--silence-deprecation=color-functions",
+    "--silence-deprecation=slash-div"
+  ],
   "liveSassCompile.settings.excludeList": [
     "/**/bootstrap-5.3.8/**",
     "/**/node_modules/**",
