@@ -1,13 +1,13 @@
 // ==========================================================================
 // COMPONENT: Projects Section 
 // ==========================================================================
-.c-projects {
-  // --- Token Locali ---
-  $section-py:      clamp(4rem, 10vh, 7rem);
-  $accent-c:        #A8B2C8;
-  $accent-java:     $primary;
-  $accent-vue:      #42b883;
+// --- Token Locali ---
+$section-py:      clamp(4rem, 10vh, 7rem);
+$accent-c:        #A8B2C8;
+$accent-java:     $primary;
+$accent-vue:      #42b883;
 
+.c-projects {
   padding: $section-py 0;
 
   // --- Header ---
