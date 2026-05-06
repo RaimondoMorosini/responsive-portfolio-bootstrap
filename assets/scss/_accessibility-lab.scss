@@ -2,8 +2,7 @@
 // ACCESSIBILITY LAB SPECIFIC STYLES
 // ==========================================================================
 
-// 1. Forced States Hacks
-// Used to display interactive states statically for contrast testing
+
 .force-hover {
   color: var(--bs-btn-hover-color, inherit) !important;
   background-color: var(--bs-btn-hover-bg, inherit) !important;
@@ -21,20 +20,20 @@
   color: var(--bs-btn-focus-color, inherit) !important;
   background-color: var(--bs-btn-focus-bg, inherit) !important;
   border-color: var(--bs-btn-focus-border-color, inherit) !important;
-  outline: 3px solid #fde047 !important;
+  outline: 3px solid $focus-ring-color !important;
   outline-offset: 2px !important;
   box-shadow: none !important;
 }
 
 .form-control.force-focus,
 .form-select.force-focus {
-  outline: 3px solid #fde047 !important;
+  outline: 3px solid $focus-ring-color !important;
   outline-offset: 2px !important;
   box-shadow: none !important;
   border-color: inherit !important;
 }
 
-// 2. Color Blindness Emulation
+//Color Blindness Emulation
 // Basato sul progetto "Color Blindness Emulation" di hail2u
 // https://github.com/hail2u/color-blindness-emulation
 $cb-types: (
@@ -54,12 +53,10 @@ $cb-types: (
   }
 }
 
-// Additional legacy grayscale for comparison
 .test-grayscale {
   filter: grayscale(100%);
 }
 
-// 3. Lab Layout Components
 .scenario-box {
   border: 2px dashed var(--bs-secondary-bg);
   padding: 3rem;

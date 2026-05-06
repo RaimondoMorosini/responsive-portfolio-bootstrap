@@ -38,7 +38,7 @@
 // GLOBAL FOCUS
 // ==========================================================================
 *:focus-visible {
-  outline: 3px solid #fde047 !important;
+  outline: 3px solid $focus-ring-color !important;
   outline-offset: 2px !important;
   box-shadow: none !important;
 }

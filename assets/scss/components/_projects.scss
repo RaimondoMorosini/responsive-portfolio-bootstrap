@@ -122,9 +122,9 @@
     flex-shrink: 0;
   }
 
-  &--c    .c-project-card__accent-bar { background: #A8B2C8; }
-  &--java .c-project-card__accent-bar { background: $primary; }
-  &--vue  .c-project-card__accent-bar { background: #42b883; }
+  &--c    .c-project-card__accent-bar { background: $accent-c; }
+  &--java .c-project-card__accent-bar { background: $accent-java; }
+  &--vue  .c-project-card__accent-bar { background: $accent-vue; }
 
   // --- Numero decorativo di sfondo ---
   &__body {
