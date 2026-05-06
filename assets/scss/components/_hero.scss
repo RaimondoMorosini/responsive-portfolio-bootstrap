@@ -82,14 +82,16 @@
     --bs-btn-font-weight: 600;
     --bs-btn-border-radius: 10px;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       transform: translateY($hover-move);
     }
 
     // Variante Principale
     &.btn-primary {
       border: none;
-      &:hover {
+      &:hover,
+      &:focus-visible {
         box-shadow: 0 10px 25px rgba($primary, 0.25);
         filter: brightness(1.1);
       }
@@ -101,7 +103,8 @@
       color: var(--bs-body-color);
       border-color: rgba($primary, 0.5);
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: $primary; 
         border-color: $primary;
         box-shadow: 0 8px 20px rgba($primary, 0.15);

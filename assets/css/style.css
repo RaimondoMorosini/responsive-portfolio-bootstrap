@@ -11859,18 +11859,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-header.header-sito {
+.l-header {
   background-color: #0f172a;
   border-bottom: 1px solid var(--bs-border-color-translucent);
   z-index: 1030;
 }
-header.header-sito .nav-link {
+.l-header .nav-link {
   position: relative;
   color: rgba(241, 245, 249, 0.6);
   padding: 0.5rem 0;
   transition: 0.3s;
 }
-header.header-sito .nav-link::after {
+.l-header .nav-link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -11880,26 +11880,27 @@ header.header-sito .nav-link::after {
   background: #16a34a;
   transition: 0.3s;
 }
-header.header-sito .nav-link:hover {
+.l-header .nav-link:hover, .l-header .nav-link:focus-visible {
   color: #f1f5f9;
+  outline: none;
 }
-header.header-sito .nav-link.active {
+.l-header .nav-link.active {
   color: #16a34a;
 }
-header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::after {
+.l-header .nav-link:hover::after, .l-header .nav-link:focus-visible::after, .l-header .nav-link.active::after {
   width: 100%;
 }
 
-.sidebar {
+.l-sidebar {
   background-color: var(--bs-tertiary-bg);
 }
 @media (min-width: 992px) {
-  .sidebar {
+  .l-sidebar {
     border-right: 1px solid rgba(var(--bs-primary-rgb), 0.1);
   }
 }
 
-.sidebar__inner {
+.l-sidebar__inner {
   position: sticky;
   top: 80px;
   z-index: 1010;
@@ -11907,6 +11908,24 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.l-sidebar__section {
+  width: 100%;
+}
+.l-sidebar__section .nav-link {
+  transition: all 0.25s ease;
+}
+.l-sidebar__section .nav-link:hover:not(.active), .l-sidebar__section .nav-link:focus-visible:not(.active) {
+  background-color: rgba(var(--bs-primary-rgb), 0.08);
+  color: var(--bs-primary);
+  transform: translateX(5px);
+}
+.l-sidebar__section .nav-link i {
+  transition: transform 0.25s ease;
+}
+.l-sidebar__section .nav-link:hover i, .l-sidebar__section .nav-link:focus-visible i {
+  transform: scale(1.2);
 }
 
 .reading-progress {
@@ -12003,13 +12022,13 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   --bs-btn-font-weight: 600;
   --bs-btn-border-radius: 10px;
 }
-.c-hero .c-btn-hero:hover {
+.c-hero .c-btn-hero:hover, .c-hero .c-btn-hero:focus-visible {
   transform: translateY(-4px);
 }
 .c-hero .c-btn-hero.btn-primary {
   border: none;
 }
-.c-hero .c-btn-hero.btn-primary:hover {
+.c-hero .c-btn-hero.btn-primary:hover, .c-hero .c-btn-hero.btn-primary:focus-visible {
   box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
   filter: brightness(1.1);
 }
@@ -12018,7 +12037,7 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   color: var(--bs-body-color);
   border-color: rgba(22, 163, 74, 0.5);
 }
-.c-hero .c-btn-hero--secondary:hover {
+.c-hero .c-btn-hero--secondary:hover, .c-hero .c-btn-hero--secondary:focus-visible {
   background-color: #16a34a;
   border-color: #16a34a;
   box-shadow: 0 8px 20px rgba(22, 163, 74, 0.15);
@@ -12191,9 +12210,16 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
     display: none;
   }
 }
-.c-projects__cta-top:hover {
+.c-projects__cta-top:hover, .c-projects__cta-top:focus-visible {
   background: rgba(22, 163, 74, 0.05);
   border-color: #16a34a;
+}
+.c-projects__cta-top:hover span, .c-projects__cta-top:focus-visible span {
+  transform: translateX(4px);
+}
+.c-projects__cta-top span {
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 .c-projects__footer .c-projects__cta-main {
   --bs-btn-padding-y: 0.8rem;
@@ -12218,8 +12244,9 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.c-project-card:hover {
+.c-project-card:hover, .c-project-card:focus-within {
   transform: translateY(-6px);
+  background-color: rgba(22, 163, 74, 0.02);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
   border-color: rgba(22, 163, 74, 0.28);
 }
@@ -12254,6 +12281,12 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   line-height: 1;
   user-select: none;
   pointer-events: none;
+  transition: all 0.4s ease;
+  transform-origin: top right;
+}
+.c-project-card:hover .c-project-card__body::before, .c-project-card:focus-within .c-project-card__body::before {
+  color: rgba(22, 163, 74, 0.15);
+  transform: scale(1.1) rotate(-5deg);
 }
 .c-project-card--c {
   --card-num: "01";
@@ -12312,14 +12345,14 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   text-decoration: none;
   transition: letter-spacing 0.2s ease;
 }
-.c-project-card__link:hover {
+.c-project-card__link:hover, .c-project-card__link:focus-visible {
   letter-spacing: 0.02rem;
 }
 .c-project-card__link-arrow {
   display: inline-block;
   transition: transform 0.22s ease;
 }
-.c-project-card:hover .c-project-card__link-arrow {
+.c-project-card:hover .c-project-card__link-arrow, .c-project-card:focus-within .c-project-card__link-arrow {
   transform: translateX(4px);
 }
 
@@ -12353,7 +12386,7 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
 .c-contact__node:last-child {
   margin-bottom: 0;
 }
-.c-contact__node:hover {
+.c-contact__node:hover, .c-contact__node:focus-within {
   background: rgba(var(--bs-primary-rgb), 0.05);
   border-color: rgba(var(--bs-primary-rgb), 0.1);
   transform: translateX(5px);
@@ -12390,7 +12423,7 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   display: block;
   word-break: break-word;
 }
-.c-contact__node-link:hover {
+.c-contact__node-link:hover, .c-contact__node-link:focus-visible {
   color: var(--bs-primary);
 }
 .c-contact__card {
@@ -12423,6 +12456,10 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   color: var(--bs-secondary-color);
   opacity: 0.6;
 }
+.c-contact__input:hover {
+  border-color: rgba(var(--bs-primary-rgb), 0.4);
+  background-color: rgba(var(--bs-primary-rgb), 0.04);
+}
 .c-contact__input:focus {
   background-color: var(--bs-body-bg);
   border-color: var(--bs-primary);
@@ -12437,7 +12474,7 @@ header.header-sito .nav-link:hover::after, header.header-sito .nav-link.active::
   border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.c-contact__btn-submit:hover {
+.c-contact__btn-submit:hover, .c-contact__btn-submit:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(var(--bs-primary-rgb), 0.3);
 }

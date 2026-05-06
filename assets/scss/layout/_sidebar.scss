@@ -12,7 +12,7 @@ $main-bg:             var(--bs-body-bg) !default;
 // --------------------------------------------------------------------------
 // Aside
 // --------------------------------------------------------------------------
-.sidebar {
+.l-sidebar {
   background-color: $sidebar-bg;
 
   @include media-breakpoint-up(lg) {
@@ -20,7 +20,7 @@ $main-bg:             var(--bs-body-bg) !default;
   }
 }
 
-.sidebar__inner {
+.l-sidebar__inner {
   position: sticky;
   top: $sidebar-top-offset;
   z-index: $zindex-sticky - 10;
@@ -28,6 +28,31 @@ $main-bg:             var(--bs-body-bg) !default;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.l-sidebar__section {
+  // Coerenza con sidebar__inner
+  width: 100%;
+
+  .nav-link {
+    transition: all 0.25s ease;
+    
+    &:hover:not(.active),
+    &:focus-visible:not(.active) {
+      background-color: rgba(var(--bs-primary-rgb), 0.08);
+      color: var(--bs-primary);
+      transform: translateX(5px);
+    }
+
+    i {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover i,
+    &:focus-visible i {
+      transform: scale(1.2);
+    }
+  }
 }
 
 

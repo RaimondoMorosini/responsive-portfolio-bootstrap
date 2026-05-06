@@ -58,9 +58,19 @@
       display: none;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background: rgba($primary, 0.05);
       border-color: $primary;
+
+      span {
+        transform: translateX(4px);
+      }
+    }
+
+    span {
+      display: inline-block;
+      transition: transform 0.25s ease;
     }
   }
 
@@ -97,8 +107,10 @@
   overflow: hidden;
   transition: $transition;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     transform: translateY(-6px);
+    background-color: rgba($primary, 0.02);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     border-color: rgba($primary, 0.28);
   }
@@ -132,6 +144,14 @@
       line-height: 1;
       user-select: none;
       pointer-events: none;
+      transition: all 0.4s ease;
+      transform-origin: top right;
+    }
+
+    .c-project-card:hover &::before,
+    .c-project-card:focus-within &::before {
+      color: rgba($primary, 0.15);
+      transform: scale(1.1) rotate(-5deg);
     }
   }
 
@@ -196,14 +216,16 @@
     text-decoration: none;
     transition: letter-spacing 0.2s ease;
 
-    &:hover { letter-spacing: 0.02rem; }
+    &:hover,
+    &:focus-visible { letter-spacing: 0.02rem; }
   }
 
   &__link-arrow {
     display: inline-block;
     transition: transform 0.22s ease;
 
-    .c-project-card:hover & {
+    .c-project-card:hover &,
+    .c-project-card:focus-within & {
       transform: translateX(4px);
     }
   }
