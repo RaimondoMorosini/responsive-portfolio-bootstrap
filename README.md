@@ -19,3 +19,14 @@ Il progetto segue criteri rigorosi di sviluppo web:
 * WAVE Evaluation Tool (Accessibilità)
 * W3C Validator (HTML/CSS)
 * Lighthouse (Performance e Best Practices)
+
+## Installazione
+
+Questo repository non include i file sorgente di Bootstrap per mantenere il progetto leggero. Per compilare il codice SASS correttamente, segui questi passaggi:
+
+1. Scarica il codice sorgente di **Bootstrap 5.3.x** dal [sito ufficiale](https://getbootstrap.com/docs/5.3/getting-started/download/#source-files).
+2. Estrai il contenuto del pacchetto.
+3. Rinomina la cartella estratta in `bootstrap-5.3.8` (o assicurati che il percorso corrisponda a quello importato in `assets/scss/style.scss`).
+4. Posiziona la cartella dentro il percorso `assets/`.
+
+Il percorso finale dovrebbe essere: `assets/bootstrap-5.3.8/`.

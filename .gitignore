@@ -6,3 +6,6 @@
 .DS_Store
 Thumbs.db
 
+
+# Dependencies
+assets/bootstrap-5.3.8/
