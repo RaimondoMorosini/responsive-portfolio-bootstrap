@@ -49,7 +49,7 @@ $cb-types: (
 
 @each $type in $cb-types {
   .#{$type} {
-    filter: url("../filters.svg##{$type}");
+    filter: url("../svg/filters.svg##{$type}");
   }
 }
 
